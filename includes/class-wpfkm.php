@@ -1,6 +1,6 @@
 <?php
 /**
- * WPF Key Manager - Main Class
+ * WPFactory Key Manager - Main Class
  *
  * @version 1.5.8
  * @since   1.0.0

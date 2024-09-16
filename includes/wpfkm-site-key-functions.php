@@ -1,6 +1,6 @@
 <?php
 /**
- * WPF Key Manager - Admin Site Key Functions
+ * WPFactory Key Manager - Admin Site Key Functions
  *
  * @version 1.5.7
  * @since   1.0.0

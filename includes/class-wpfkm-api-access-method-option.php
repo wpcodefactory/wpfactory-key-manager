@@ -1,6 +1,6 @@
 <?php
 /**
- * WPF Key Manager - Admin - API access method option
+ * WPFactory Key Manager - Admin - API access method option
  *
  * @version 1.5.8
  * @since   1.5.8

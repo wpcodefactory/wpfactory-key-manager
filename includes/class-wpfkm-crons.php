@@ -1,6 +1,6 @@
 <?php
 /**
- * WPF Key Manager - Admin - Crons
+ * WPFactory Key Manager - Admin - Crons
  *
  * @version 1.5.8
  * @since   1.0.0

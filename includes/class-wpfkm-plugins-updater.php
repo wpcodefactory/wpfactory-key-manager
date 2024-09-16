@@ -1,6 +1,6 @@
 <?php
 /**
- * WPF Key Manager - Plugins Updater Class
+ * WPFactory Key Manager - Plugins Updater Class
  *
  * @version 1.7.0
  * @since   1.0.0

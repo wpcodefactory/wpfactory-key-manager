@@ -1,6 +1,6 @@
 <?php
 /**
- * WPF Key Manager - Admin Site Key Manager
+ * WPFactory Key Manager - Admin Site Key Manager
  *
  * @version 1.7.1
  * @since   1.0.0
@@ -129,7 +129,7 @@ class WPFKM_Site_Key_Manager {
 	 */
 	function add_admin_menu() {
 		add_options_page(
-			__( 'WPF Key Manager', 'wpf-key-manager' ),
+			__( 'WPFactory Key Manager', 'wpf-key-manager' ),
 			__( 'WPFactory', 'wpf-key-manager' ),
 			'manage_options',
 			'wpf-key-manager',
