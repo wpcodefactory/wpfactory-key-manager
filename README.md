@@ -6,7 +6,7 @@ A library meant to be imported by the Pro version of WPFactory plugins to manage
 
 Installation via Composer. Instructions to setup the `composer.json`.
 
-1- Add this object to the `repositories` array:
+1. Add this object to the `repositories` array:
 
 ```json
 "repositories": [    
@@ -17,7 +17,7 @@ Installation via Composer. Instructions to setup the `composer.json`.
 ]
 ```
 
-2- Require the library:
+2. Require the library:
 
 ```json
 "wpfactory/wpfactory-key-manager": "*"
