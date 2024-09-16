@@ -18,7 +18,7 @@ if ( ! function_exists( 'wpfkm_get_site_key' ) ) {
 	 * @since   1.0.0
 	 */
 	function wpfkm_get_site_key( $item_slug ) {
-		$keys = get_option( 'wpfkm_site_keys', array() );
+		$keys = get_option( 'alg_site_keys', array() );
 		return ( isset( $keys[ $item_slug ] ) ? trim( $keys[ $item_slug ] ) : '' );
 	}
 }
@@ -31,7 +31,7 @@ if ( ! function_exists( 'wpfkm_update_site_key_status' ) ) {
 	 * @since   1.0.0
 	 */
 	function wpfkm_update_site_key_status( $item_slug, $server_response, $client_data = '' ) {
-		$statuses = get_option( 'wpfkm_site_keys_statuses', array() );
+		$statuses = get_option( 'alg_site_keys_statuses', array() );
 		if ( in_array( $client_data, array( 'NO_RESPONSE', 'SERVER_ERROR' ) ) && wpfkm_is_site_key_valid( $item_slug ) ) {
 			// we don't want to overwrite valid licence response with server errors
 			return;
@@ -41,7 +41,7 @@ if ( ! function_exists( 'wpfkm_update_site_key_status' ) ) {
 			'client_data'     => $client_data,
 			'time_checked'    => time(),
 		);
-		update_option( 'wpfkm_site_keys_statuses', $statuses );
+		update_option( 'alg_site_keys_statuses', $statuses );
 	}
 }
 
@@ -53,7 +53,7 @@ if ( ! function_exists( 'wpfkm_get_site_key_status' ) ) {
 	 * @since   1.0.0
 	 */
 	function wpfkm_get_site_key_status( $item_slug ) {
-		$statuses = get_option( 'wpfkm_site_keys_statuses', array() );
+		$statuses = get_option( 'alg_site_keys_statuses', array() );
 		return ( isset( $statuses[ $item_slug ] ) ? $statuses[ $item_slug ] : false );
 	}
 }

@@ -52,8 +52,8 @@ class WPFKM_Site_Key_Manager {
 	 */
 	function update_item_list() {
 		if ( isset( $_GET['wpfkm_update_item_list'] ) ) {
-			do_action( 'wpfkm_get_plugins_list' );
-			do_action( 'wpfkm_get_themes_list' );
+			do_action( 'alg_get_plugins_list' );
+			do_action( 'alg_get_themes_list' );
 			wp_safe_redirect( remove_query_arg( 'wpfkm_update_item_list' ) );
 			exit;
 		}
@@ -74,9 +74,9 @@ class WPFKM_Site_Key_Manager {
 			// Single item
 			$item_slug            = sanitize_text_field( $_POST['wpfkm_item_slug'] );
 			$site_key             = sanitize_text_field( $_POST['wpfkm_site_key'] );
-			$keys                 = get_option( 'wpfkm_site_keys', array() );
+			$keys                 = get_option( 'alg_site_keys', array() );
 			$keys[ $item_slug ]   = $site_key;
-			update_option( 'wpfkm_site_keys', $keys );
+			update_option( 'alg_site_keys', $keys );
 			wpfkm_check_site_key( $item_slug );
 			wpf_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();
 
@@ -88,12 +88,12 @@ class WPFKM_Site_Key_Manager {
 				wpf_key_manager()->plugins_updater->themes_to_update,
 			);
 			$site_key   = sanitize_text_field( $_POST['wpfkm_site_key'] );
-			$keys       = get_option( 'wpfkm_site_keys', array() );
+			$keys       = get_option( 'alg_site_keys', array() );
 			foreach ( $item_slugs as $item_slug ) {
 				$keys[ $item_slug ] = $site_key;
 				wpfkm_check_site_key( $item_slug );
 			}
-			update_option( 'wpfkm_site_keys', $keys );
+			update_option( 'alg_site_keys', $keys );
 
 		}
 
