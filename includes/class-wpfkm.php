@@ -90,26 +90,21 @@ final class WPFKM {
 	 */
 	function __construct() {
 
-		// Core properties
+		// Core properties.
 		$this->update_server      = WPFKM_UPDATE_SERVER;
 		$this->update_server_text = 'WPFactory.com';
 		$this->site_url           = str_replace( array( 'http://', 'https://' ), '', site_url() );
 
-		// Set up localisation
+		// Set up localisation.
 		add_action( 'init', array( $this, 'localize' ) );
 
-		// Version update
+		// Version update.
 		if ( is_admin() && $this->version !== get_option( 'wpf_key_manager_version', '' ) ) {
 			update_option( 'wpf_key_manager_version', $this->version );
 		}
 
-		// Include required files
+		// Include required files.
 		$this->includes();
-
-		// Admin
-		if ( is_admin() ) {
-			add_filter( 'plugin_action_links_' . plugin_basename( WPFKM_FILE ), array( $this, 'action_links' ) );
-		}
 
 	}
 
@@ -221,22 +216,6 @@ final class WPFKM {
 		}
 
 		return $response;
-	}
-
-	/**
-	 * Show action links on the plugin screen.
-	 *
-	 * @version 1.4.0
-	 * @since   1.0.0
-	 *
-	 * @param   mixed $links
-	 * @return  array
-	 */
-	function action_links( $links ) {
-		$links[] = '<a href="' . admin_url( 'options-general.php?page=wpfkm' ) . '">' .
-			__( 'Settings', 'wpf-key-manager' ) .
-		'</a>';
-		return $links;
 	}
 
 	/**
