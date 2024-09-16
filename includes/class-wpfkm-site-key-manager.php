@@ -235,7 +235,7 @@ class WPFKM_Site_Key_Manager {
 		if ( isset( $_GET['item_slug'] ) ) {
 			$item_slug       = sanitize_text_field( $_GET['item_slug'] );
 			$key             = wpfkm_get_site_key( $item_slug );
-			$item_type_label = 'plugin' === $_GET['item_type'] ? __( 'Plugin', 'wpf-key-manager' ) : __( 'Theme', 'wpf-key-manager' );
+			$item_type_label = isset( $_GET['item_type'] ) && 'plugin' === $_GET['item_type'] ? __( 'Plugin', 'wpf-key-manager' ) : __( 'Theme', 'wpf-key-manager' );
 			if ( isset( $_GET['item_type'] ) && 'theme' == $_GET['item_type'] ) {
 				$item_label = ( '' != $all_themes[ $item_slug ]->get( 'Name' ) ? $all_themes[ $item_slug ]->get( 'Name' ) : esc_html( $item_slug ) );
 			} else {
