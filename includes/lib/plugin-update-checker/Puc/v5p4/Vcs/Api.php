@@ -124,7 +124,7 @@ if ( !class_exists(Api::class, false) ):
 		abstract protected function getUpdateDetectionStrategies($configBranch);
 
 		/**
-		 * Get the readme.txt file from the remote repository and parse it
+		 * Get the changelog.txt file from the remote repository and parse it
 		 * according to the plugin readme standard.
 		 *
 		 * @param string $ref Tag or branch name.
@@ -141,13 +141,13 @@ if ( !class_exists(Api::class, false) ):
 		}
 
 		/**
-		 * Get the case-sensitive name of the local readme.txt file.
+		 * Get the case-sensitive name of the local changelog.txt file.
 		 *
-		 * In most cases it should just be called "readme.txt", but some plugins call it "README.txt",
+		 * In most cases it should just be called "changelog.txt", but some plugins call it "README.txt",
 		 * "README.TXT", or even "Readme.txt". Most VCS are case-sensitive so we need to know the correct
 		 * capitalization.
 		 *
-		 * Defaults to "readme.txt" (all lowercase).
+		 * Defaults to "changelog.txt" (all lowercase).
 		 *
 		 * @return string
 		 */
@@ -157,12 +157,12 @@ if ( !class_exists(Api::class, false) ):
 				return $fileName;
 			}
 
-			$fileName = 'readme.txt';
+			$fileName = 'changelog.txt';
 			if ( isset($this->localDirectory) ) {
 				$files = scandir($this->localDirectory);
 				if ( !empty($files) ) {
 					foreach ($files as $possibleFileName) {
-						if ( strcasecmp($possibleFileName, 'readme.txt') === 0 ) {
+						if ( strcasecmp($possibleFileName, 'changelog.txt') === 0 ) {
 							$fileName = $possibleFileName;
 							break;
 						}

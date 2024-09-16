@@ -161,7 +161,7 @@ if ( !class_exists(Ui::class, false) ):
 				$lastRequestApiErrors = $this->updateChecker->getLastRequestApiErrors();
 
 				if ( ($update === null) && !empty($lastRequestApiErrors) ) {
-					//Some errors are not critical. For example, if PUC tries to retrieve the readme.txt
+					//Some errors are not critical. For example, if PUC tries to retrieve the changelog.txt
 					//file from GitHub and gets a 404, that's an API error, but it doesn't prevent updates
 					//from working. Maybe the plugin simply doesn't have a readme.
 					//Let's only show important errors.

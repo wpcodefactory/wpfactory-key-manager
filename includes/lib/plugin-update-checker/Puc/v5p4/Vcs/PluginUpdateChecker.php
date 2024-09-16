@@ -100,7 +100,7 @@ if ( !class_exists(PluginUpdateChecker::class, false) ):
 				return null;
 			}
 
-			//Try parsing readme.txt. If it's formatted according to WordPress.org standards, it will contain
+			//Try parsing changelog.txt. If it's formatted according to WordPress.org standards, it will contain
 			//a lot of useful information like the required/tested WP version, changelog, and so on.
 			if ( $this->readmeTxtExistsLocally() ) {
 				$this->setInfoFromRemoteReadme($ref, $info);
@@ -127,7 +127,7 @@ if ( !class_exists(PluginUpdateChecker::class, false) ):
 		}
 
 		/**
-		 * Check if the currently installed version has a readme.txt file.
+		 * Check if the currently installed version has a changelog.txt file.
 		 *
 		 * @return bool
 		 */
@@ -169,7 +169,7 @@ if ( !class_exists(PluginUpdateChecker::class, false) ):
 		}
 
 		/**
-		 * Copy plugin metadata from the remote readme.txt file.
+		 * Copy plugin metadata from the remote changelog.txt file.
 		 *
 		 * @param string $ref GitHub tag or branch where to look for the readme.
 		 * @param Plugin\PluginInfo $pluginInfo
