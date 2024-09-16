@@ -132,7 +132,7 @@ class WPFKM_Site_Key_Manager {
 			__( 'WPFactory Key Manager', 'wpf-key-manager' ),
 			__( 'WPFactory', 'wpf-key-manager' ),
 			'manage_options',
-			'wpf-key-manager',
+			'wpfkm',
 			array( $this, 'output_admin_menu' )
 		);
 	}
