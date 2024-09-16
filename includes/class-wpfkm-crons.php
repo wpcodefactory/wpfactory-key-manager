@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin - Crons
  *
- * @version 1.5.8
+ * @version 1.0.0
  * @since   1.0.0
  *
  * @author  WPFactory.
@@ -17,7 +17,7 @@ class WPFKM_Crons {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.1.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) unschedule events?
@@ -58,7 +58,7 @@ class WPFKM_Crons {
 	/**
 	 * check_sites_keys.
 	 *
-	 * @version 1.1.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function check_sites_keys( $interval ) {
@@ -86,7 +86,7 @@ class WPFKM_Crons {
 	/**
 	 * get_plugins_list.
 	 *
-	 * @version 1.5.7
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function get_plugins_list() {
@@ -100,8 +100,8 @@ class WPFKM_Crons {
 	/**
 	 * schedule_get_themes_list.
 	 *
-	 * @version 1.1.0
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function schedule_get_themes_list() {
 		$event_timestamp = wp_next_scheduled( 'wpfkm_get_themes_list', array( 'daily' ) );
@@ -114,8 +114,8 @@ class WPFKM_Crons {
 	/**
 	 * get_themes_list.
 	 *
-	 * @version 1.5.8
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function get_themes_list() {
 		update_option( 'wpfkm_get_themes_list_cron_time_last_run', time() );
@@ -128,5 +128,3 @@ class WPFKM_Crons {
 }
 
 endif;
-
-return new WPFKM_Crons();

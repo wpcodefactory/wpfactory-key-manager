@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Plugins Updater Class
  *
- * @version 1.7.0
+ * @version 1.0.0
  * @since   1.0.0
  *
  * @author  WPFactory.
@@ -19,35 +19,35 @@ class WPFKM_Plugins_Updater {
 	/**
 	 * plugins_to_update.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $plugins_to_update;
 
 	/**
 	 * themes_to_update.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $themes_to_update;
 
 	/**
 	 * items_to_update.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $items_to_update;
 
 	/**
 	 * update_checkers.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $update_checkers;
 
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.1.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @see     https://github.com/YahnisElsts/plugin-update-checker/
@@ -108,8 +108,8 @@ class WPFKM_Plugins_Updater {
 	/**
 	 * add_theme_manage_key_links.
 	 *
-	 * @version 1.3.0
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @todo    (dev) minimize JS
 	 */
@@ -135,8 +135,8 @@ class WPFKM_Plugins_Updater {
 	/**
 	 * add_updater.
 	 *
-	 * @version 1.7.0
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function add_updater( $item_slug, $item_file_path, $is_plugin = true ) {
 
@@ -183,8 +183,8 @@ class WPFKM_Plugins_Updater {
 	/**
 	 * add_updater_query_args_theme.
 	 *
-	 * @version 1.1.0
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function add_updater_query_args_theme( $query ) {
 		$plugin_slug = str_replace( 'puc_request_update_query_args_theme-', '', current_filter() );
@@ -235,7 +235,7 @@ class WPFKM_Plugins_Updater {
 	/**
 	 * maybe_add_after_plugin_row_key_error_message.
 	 *
-	 * @version 1.5.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function maybe_add_after_plugin_row_key_error_message( $plugin_file, $plugin_data, $status ) {
@@ -254,5 +254,3 @@ class WPFKM_Plugins_Updater {
 }
 
 endif;
-
-return new WPFKM_Plugins_Updater();

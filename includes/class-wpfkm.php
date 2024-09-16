@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Main Class
  *
- * @version 1.5.8
+ * @version 1.0.0
  * @since   1.0.0
  *
  * @author  WPFactory.
@@ -25,28 +25,28 @@ final class WPFKM {
 	/**
 	 * update_server.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $update_server;
 
 	/**
 	 * update_server_text.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $update_server_text;
 
 	/**
 	 * site_url.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $site_url;
 
 	/**
 	 * plugins_updater.
 	 *
-	 * @since 1.5.4
+	 * @since 1.0.0
 	 */
 	public $plugins_updater;
 
@@ -77,7 +77,7 @@ final class WPFKM {
 	/**
 	 * Alg_WPCodeFactory_Helper Constructor.
 	 *
-	 * @version 1.4.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @access  public
@@ -111,8 +111,8 @@ final class WPFKM {
 	/**
 	 * localize.
 	 *
-	 * @version 1.4.0
-	 * @since   1.3.1
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function localize() {
 		load_plugin_textdomain( 'wpf-key-manager', false, dirname( plugin_basename( WPFKM_FILE ) ) . '/langs/' );
@@ -121,16 +121,15 @@ final class WPFKM {
 	/**
 	 * Include required core files used in admin and on the frontend.
 	 *
-	 * @version 1.5.8
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function includes() {
 		require_once( 'wpfkm-site-key-functions.php' );
-		$this->plugins_updater = require_once( 'class-wpfkm-plugins-updater.php' );
-		require_once( 'class-wpfkm-site-key-manager.php' );
-		require_once( 'class-wpfkm-crons.php' );
+		$this->plugins_updater = new WPFKM_Plugins_Updater();
+		new WPFKM_Site_Key_Manager();
+		new WPFKM_Crons();
 		// API access method option.
-		require_once( 'class-wpfkm-api-access-method-option.php' );
 		$class = new WPFKM_API_Access_Method_Option();
 		$class->init();
 	}
@@ -138,8 +137,8 @@ final class WPFKM {
 	/**
 	 * get_response_from_url.
 	 *
-	 * @version 1.5.8
-	 * @since   1.5.1
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @param $url
 	 *
@@ -167,8 +166,8 @@ final class WPFKM {
 	/**
 	 * get_response_from_url_using_curl.
 	 *
-	 * @version 1.5.8
-	 * @since   1.5.8
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @param $url
 	 *
@@ -190,8 +189,8 @@ final class WPFKM {
 	/**
 	 * get_response_from_url_using_file_get_contents.
 	 *
-	 * @version 1.5.8
-	 * @since   1.5.8
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @param $url
 	 *
@@ -221,7 +220,7 @@ final class WPFKM {
 	/**
 	 * Get the plugin url.
 	 *
-	 * @version 1.4.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @return  string
@@ -233,7 +232,7 @@ final class WPFKM {
 	/**
 	 * Get the plugin path.
 	 *
-	 * @version 1.4.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @return  string
@@ -245,7 +244,7 @@ final class WPFKM {
 	/**
 	 * Get the plugin file.
 	 *
-	 * @version 1.4.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function plugin_file() {

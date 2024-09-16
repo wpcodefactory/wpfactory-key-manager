@@ -2,8 +2,8 @@
 /**
  * WPFactory Key Manager - Admin - API access method option
  *
- * @version 1.5.8
- * @since   1.5.8
+ * @version 1.0.0
+ * @since   1.0.0
  *
  * @author  WPFactory.
  */
@@ -16,8 +16,8 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 		/**
 		 * init.
 		 *
-		 * @version 1.5.8
-		 * @since   1.5.8
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @return void
 		 */
@@ -30,8 +30,8 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 		/**
 		 * save_option.
 		 *
-		 * @version 1.5.8
-		 * @since   1.5.8
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @return void
 		 */
@@ -50,8 +50,8 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 		/**
 		 * handle_option_js.
 		 *
-		 * @version 1.5.8
-		 * @since   1.5.8
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @param $html
 		 *
@@ -92,8 +92,8 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 		/**
 		 * get_possible_options.
 		 *
-		 * @version 1.5.8
-		 * @since   1.5.8
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @return array
 		 */
@@ -107,8 +107,8 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 		/**
 		 * generate_option_html.
 		 *
-		 * @version 1.5.8
-		 * @since   1.5.8
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @return string
 		 */

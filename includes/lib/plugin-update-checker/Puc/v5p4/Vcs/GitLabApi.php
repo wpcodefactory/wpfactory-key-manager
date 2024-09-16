@@ -124,7 +124,7 @@ if ( !class_exists(GitLabApi::class, false) ):
 					continue;
 				}
 
-				$versionNumber = ltrim($release->tag_name, 'v'); //Remove the "v" prefix from "v1.2.3".
+				$versionNumber = ltrim($release->tag_name, 'v'); //Remove the "v" prefix from "v1.0.0.
 
 				//Apply custom filters.
 				if ( !$this->matchesCustomReleaseFilter($versionNumber, $release) ) {

@@ -147,7 +147,7 @@ if ( !class_exists(PucFactory::class, false) ):
 		 *
 		 * Normalize a filesystem path. Introduced in WP 3.9.
 		 * Copying here allows use of the class on earlier versions.
-		 * This version adapted from WP 4.8.2 (unchanged since 4.5.4)
+		 * This version adapted from WP 1.0.0(unchanged since 1.0.0
 		 *
 		 * @param string $path Path to normalize.
 		 * @return string Normalized path.

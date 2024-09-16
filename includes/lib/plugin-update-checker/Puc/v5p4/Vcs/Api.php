@@ -203,7 +203,7 @@ if ( !class_exists(Api::class, false) ):
 		 * @return bool
 		 */
 		protected function looksLikeVersion($name) {
-			//Tag names may be prefixed with "v", e.g. "v1.2.3".
+			//Tag names may be prefixed with "v", e.g. "v1.0.0.
 			$name = ltrim($name, 'v');
 
 			//The version string must start with a number.

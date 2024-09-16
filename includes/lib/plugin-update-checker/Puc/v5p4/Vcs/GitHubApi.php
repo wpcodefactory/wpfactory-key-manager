@@ -92,7 +92,7 @@ if ( !class_exists(GitHubApi::class, false) ):
 					continue;
 				}
 
-				$versionNumber = ltrim($release->tag_name, 'v'); //Remove the "v" prefix from "v1.2.3".
+				$versionNumber = ltrim($release->tag_name, 'v'); //Remove the "v" prefix from "v1.0.0.
 
 				//Custom release filtering.
 				if ( !$this->matchesCustomReleaseFilter($versionNumber, $release) ) {

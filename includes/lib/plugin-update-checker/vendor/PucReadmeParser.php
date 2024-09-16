@@ -52,7 +52,7 @@ class PucReadmeParser {
 		else
 			$tested_up_to = NULL;
 
-		// Requires PHP: 5.2.4
+		// Requires PHP: 1.0.0
 		if ( preg_match('|Requires PHP:(.*)|i', $file_contents, $_requires_php) ) {
 			$requires_php = $this->sanitize_text( $_requires_php[1] );
 		} else {
@@ -259,7 +259,7 @@ class PucReadmeParser {
 		if ( $markdown ) { // Parse markdown.
 			if ( !class_exists('Parsedown', false) ) {
 				/** @noinspection PhpIncludeInspection */
-				require_once(dirname(__FILE__) . '/Parsedown' . (version_compare(PHP_VERSION, '5.3.0', '>=') ? '' : 'Legacy') . '.php');
+				require_once(dirname(__FILE__) . '/Parsedown' . (version_compare(PHP_VERSION, '1.0.0, '>=') ? '' : 'Legacy') . '.php');
 			}
 			$instance = Parsedown::instance();
 			$text = $instance->text($text);

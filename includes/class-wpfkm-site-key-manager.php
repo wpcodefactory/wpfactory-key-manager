@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin Site Key Manager
  *
- * @version 1.7.1
+ * @version 1.0.0
  * @since   1.0.0
  *
  * @author  WPFactory.
@@ -17,7 +17,7 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
@@ -31,8 +31,8 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * check_item_site_key.
 	 *
-	 * @version 1.2.0
-	 * @since   1.2.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function check_item_site_key() {
 		if ( isset( $_GET['wpfkm_check_item_site_key'] ) ) {
@@ -45,8 +45,8 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * update_item_list.
 	 *
-	 * @version 1.2.0
-	 * @since   1.2.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @todo    (dev) add "Item list successfully updated" message
 	 */
@@ -62,7 +62,7 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * set_item_site_key.
 	 *
-	 * @version 1.6.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) All items: `wpf_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();`?
@@ -102,7 +102,7 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * admin_notice_site_key_status.
 	 *
-	 * @version 1.5.3
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function admin_notice_site_key_status() {
@@ -124,7 +124,7 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * add_admin_menu.
 	 *
-	 * @version 1.3.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function add_admin_menu() {
@@ -140,7 +140,7 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * get_table_html.
 	 *
-	 * @version 1.5.8
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function get_table_html( $data, $args = array() ) {
@@ -179,8 +179,8 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * get_site_item_key_column.
 	 *
-	 * @version 1.2.0
-	 * @since   1.2.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function get_site_item_key_column( $item_site_key, $item_slug ) {
 		return ( '' === $item_site_key ? '' :
@@ -192,8 +192,8 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * get_site_url_html.
 	 *
-	 * @version 1.6.0
-	 * @since   1.5.8
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @return false|string
 	 */
@@ -221,8 +221,8 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * get_key_setting_input_html.
 	 *
-	 * @version 1.6.0
-	 * @since   1.5.8
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 *
 	 * @param $all_plugins
 	 * @param $all_themes
@@ -285,7 +285,7 @@ class WPFKM_Site_Key_Manager {
 	/**
 	 * output_admin_menu.
 	 *
-	 * @version 1.7.1
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) restyle
@@ -395,5 +395,3 @@ class WPFKM_Site_Key_Manager {
 }
 
 endif;
-
-return new WPFKM_Site_Key_Manager();

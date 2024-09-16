@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin Site Key Functions
  *
- * @version 1.5.7
+ * @version 1.0.0
  * @since   1.0.0
  *
  * @author  WPFactory.
@@ -14,7 +14,7 @@ if ( ! function_exists( 'wpfkm_get_site_key' ) ) {
 	/**
 	 * wpfkm_get_site_key.
 	 *
-	 * @version 1.2.2
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function wpfkm_get_site_key( $item_slug ) {
@@ -27,7 +27,7 @@ if ( ! function_exists( 'wpfkm_update_site_key_status' ) ) {
 	/**
 	 * wpfkm_update_site_key_status.
 	 *
-	 * @version 1.2.0
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function wpfkm_update_site_key_status( $item_slug, $server_response, $client_data = '' ) {
@@ -78,7 +78,7 @@ if ( ! function_exists( 'wpfkm_get_site_key_status_message' ) ) {
 	/**
 	 * wpfkm_get_site_key_status_message.
 	 *
-	 * @version 1.5.6
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `SERVER_ERROR`: not used?
@@ -115,7 +115,7 @@ if ( ! function_exists( 'wpfkm_check_site_key' ) ) {
 	/**
 	 * wpfkm_check_site_key.
 	 *
-	 * @version 1.5.7
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function wpfkm_check_site_key( $item_slug ) {

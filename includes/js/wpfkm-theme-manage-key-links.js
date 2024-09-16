@@ -1,8 +1,8 @@
 /**
  * wpfkm-theme-manage-key-links.js
  *
- * @version 1.3.0
- * @since   1.1.0
+ * @version 1.0.0
+ * @since   1.0.0
  *
  * @author  WPFactory.
  */
@@ -12,8 +12,8 @@ jQuery( document ).ready( function() {
 	/**
 	 * inArray.
 	 *
-	 * @version 1.1.0
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	function inArray( needle, haystack ) {
 		var length = haystack.length;
@@ -28,8 +28,8 @@ jQuery( document ).ready( function() {
 	/**
 	 * Main function.
 	 *
-	 * @version 1.3.0
-	 * @since   1.1.0
+	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	jQuery( 'div.theme-actions' ).each( function() {
 		var theme_slug = jQuery( this ).parents( 'div.theme' ).attr( 'data-slug' );
