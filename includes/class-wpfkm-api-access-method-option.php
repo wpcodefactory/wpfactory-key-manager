@@ -5,7 +5,7 @@
  * @version 1.0.0
  * @since   1.0.0
  *
- * @author  WPFactory.
+ * @author  Algoritmika Ltd.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -41,7 +41,7 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 				'selected_value' => '',
 			) );
 			if ( in_array( $args['selected_value'], array_keys( $this->get_possible_options() ) ) ) {
-				update_option( 'wpf_key_manager_api_access_method', $args['selected_value'] );
+				update_option( 'alg_wpcodefactory_helper_api_access_method', $args['selected_value'] );
 				wp_send_json_success();
 			}
 			wp_send_json_error();
@@ -64,22 +64,22 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 				'action'   => 'save_api_access_method_option'
 			);
 			?>
-            <script>
-                jQuery(document).ready(function ($) {
-                    let dataFromPHP = <?php echo json_encode( $php_to_js );?>;
-                    let selectElement = document.getElementById('wpfh_api_access_method');
-                    selectElement.addEventListener('change', function (event) {
-                        let selectedValue = event.target.value;
-                        let data = {
-                            action: dataFromPHP.action,
-                            security: dataFromPHP.security,
-                            selected_value: selectedValue,
-                        };
-                        $.post(ajaxurl, data, function (response) {
-                        });
-                    });
-                });
-            </script>
+			<script>
+				jQuery(document).ready(function ($) {
+					let dataFromPHP = <?php echo json_encode( $php_to_js );?>;
+					let selectElement = document.getElementById('wpfh_api_access_method');
+					selectElement.addEventListener('change', function (event) {
+						let selectedValue = event.target.value;
+						let data = {
+							action: dataFromPHP.action,
+							security: dataFromPHP.security,
+							selected_value: selectedValue,
+						};
+						$.post(ajaxurl, data, function (response) {
+						});
+					});
+				});
+			</script>
 			<?php
 
 			$html .= ob_get_contents();
@@ -115,29 +115,29 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 		function generate_option_html( $html ) {
 			ob_start();
 			$possible_options = $this->get_possible_options();
-			$option_val       = get_option( 'wpf_key_manager_api_access_method', 'file_get_contents' );
+			$option_val       = get_option( 'alg_wpcodefactory_helper_api_access_method', 'file_get_contents' );
 			?>
-            <table class="form-table" role="presentation">
-                <tbody>
-                <tr>
-                    <th scope="row">
-                        <label for="wpfh_api_access_method"><?php _e( 'API access method', 'wpf-key-manager' ); ?></label>
-                    </th>
-                    <td>
-                        <select name="wpfh_api_access_method" id="wpfh_api_access_method" class="postform">
+			<table class="form-table" role="presentation">
+				<tbody>
+				<tr>
+					<th scope="row">
+						<label for="wpfh_api_access_method"><?php _e( 'API access method', 'wpcodefactory-helper' ); ?></label>
+					</th>
+					<td>
+						<select name="wpfh_api_access_method" id="wpfh_api_access_method" class="postform">
 							<?php foreach ( $possible_options as $option_id => $option_label ): ?>
-                                <option value="<?php echo esc_attr( $option_id ); ?>"
+								<option value="<?php echo esc_attr( $option_id ); ?>"
 									<?php selected( $option_val, $option_id ); ?>><?php echo esc_html( $option_label ); ?>
-                                </option>
+								</option>
 							<?php endforeach; ?>
-                        </select>
-                        <p class="description"
-                           id="new-admin-email-description"><?php _e( 'The preferred way for accessing WPFactory API. If something goes wrong, change it.', 'wpf-key-manager' ) ?>
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+						</select>
+						<p class="description"
+						   id="new-admin-email-description"><?php _e( 'The preferred way for accessing WPFactory API. If something goes wrong, change it.', 'wpcodefactory-helper' ) ?>
+						</p>
+					</td>
+				</tr>
+				</tbody>
+			</table>
 			<?php
 			$html .= ob_get_contents();
 			ob_end_clean();

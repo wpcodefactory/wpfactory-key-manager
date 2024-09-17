@@ -1,6 +1,7 @@
 <?php
 
 if ( ! function_exists( 'wpf_key_manager' ) ) {
+
 	/**
 	 * Returns the main instance of WPFKM to prevent the need to use globals.
 	 *

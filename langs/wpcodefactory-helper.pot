@@ -52,7 +52,7 @@ msgstr ""
 
 #: includes/class-wpfkm-site-key-manager.php:132
 #: includes/class-wpfkm-site-key-manager.php:300
-msgid "WPFactory Helper"
+msgid "WPFactory Key Manager"
 msgstr ""
 
 #: includes/class-wpfkm-site-key-manager.php:133
