@@ -21,10 +21,10 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		 * @since   1.0.0
 		 */
 		function __construct() {
-			add_action( 'admin_menu',    array( $this, 'add_admin_menu' ) );
-			add_action( 'admin_init',    array( $this, 'set_item_site_key' ) );
-			add_action( 'admin_init',    array( $this, 'update_item_list' ) );
-			add_action( 'admin_init',    array( $this, 'check_item_site_key' ) );
+			add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
+			add_action( 'admin_init', array( $this, 'set_item_site_key' ) );
+			add_action( 'admin_init', array( $this, 'update_item_list' ) );
+			add_action( 'admin_init', array( $this, 'check_item_site_key' ) );
 			add_action( 'admin_notices', array( $this, 'admin_notice_site_key_status' ) );
 		}
 
@@ -45,8 +45,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * update_item_list.
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version       1.0.0
+		 * @since         1.0.0
 		 *
 		 * @todo    (dev) add "Item list successfully updated" message
 		 */
@@ -62,8 +62,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * set_item_site_key.
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version       1.0.0
+		 * @since         1.0.0
 		 *
 		 * @todo    (dev) All items: `wpf_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();`?
 		 */
@@ -72,10 +72,10 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 			if ( isset( $_POST['alg_set_site_key'] ) ) {
 
 				// Single item
-				$item_slug            = sanitize_text_field( $_POST['alg_item_slug'] );
-				$site_key             = sanitize_text_field( $_POST['alg_site_key'] );
-				$keys                 = get_option( 'alg_site_keys', array() );
-				$keys[ $item_slug ]   = $site_key;
+				$item_slug          = sanitize_text_field( $_POST['alg_item_slug'] );
+				$site_key           = sanitize_text_field( $_POST['alg_site_key'] );
+				$keys               = get_option( 'alg_site_keys', array() );
+				$keys[ $item_slug ] = $site_key;
 				update_option( 'alg_site_keys', $keys );
 				alg_wpcfh_check_site_key( $item_slug );
 				wpf_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();
@@ -111,7 +111,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				'wpcodefactory-helper' === $_GET['page'] &&
 				isset( $_GET['item_slug'] )
 			) {
-				$item_slug = sanitize_text_field( $_GET['item_slug'] );
+				$item_slug       = sanitize_text_field( $_GET['item_slug'] );
 				$site_key_status = alg_wpcfh_get_site_key_status( $item_slug );
 				if ( false !== $site_key_status ) {
 					$class   = ( alg_wpcfh_is_site_key_valid( $item_slug ) ? 'notice notice-success is-dismissible' : 'notice notice-error' );
@@ -144,7 +144,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		 * @since   1.0.0
 		 */
 		function get_table_html( $data, $args = array() ) {
-			$args = array_merge( array(
+			$args        = array_merge( array(
 				'table_class'        => '',
 				'table_style'        => '',
 				'row_styles'         => '',
@@ -154,25 +154,26 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 			), $args );
 			$table_class = ( '' == $args['table_class'] ) ? '' : ' class="' . $args['table_class'] . '"';
 			$table_style = ( '' == $args['table_style'] ) ? '' : ' style="' . $args['table_style'] . '"';
-			$row_styles  = ( '' == $args['row_styles'] )  ? '' : ' style="' . $args['row_styles']  . '"';
+			$row_styles  = ( '' == $args['row_styles'] ) ? '' : ' style="' . $args['row_styles'] . '"';
 
 			$html = '';
 			$html .= '<table style="margin-left:-1px"' . $table_class . $table_style . '>';
 			end( $data );
 			$lasy_key = key( $data );
-			foreach( $data as $row_nr => $row ) {
+			foreach ( $data as $row_nr => $row ) {
 				$html .= 0 === $row_nr ? '<thead>' : ( 1 === $row_nr ? '<tbody>' : '' );
 				$html .= '<tr' . $row_styles . '>';
-				foreach( $row as $column_nr => $value ) {
-					$th_or_td = ( ( 0 === $row_nr && 'horizontal' === $args['table_heading_type'] ) || ( 0 === $column_nr && 'vertical' === $args['table_heading_type'] ) ) ? 'th' : 'td';
+				foreach ( $row as $column_nr => $value ) {
+					$th_or_td     = ( ( 0 === $row_nr && 'horizontal' === $args['table_heading_type'] ) || ( 0 === $column_nr && 'vertical' === $args['table_heading_type'] ) ) ? 'th' : 'td';
 					$column_class = ( ! empty( $args['columns_classes'][ $column_nr ] ) ) ? ' class="' . $args['columns_classes'][ $column_nr ] . '"' : '';
-					$column_style = ( ! empty( $args['columns_styles'][ $column_nr ] ) )  ? ' style="' . $args['columns_styles'][ $column_nr ]  . '"' : '';
-					$html .= '<' . $th_or_td . $column_class . $column_style . '>' . $value . '</' . $th_or_td . '>';
+					$column_style = ( ! empty( $args['columns_styles'][ $column_nr ] ) ) ? ' style="' . $args['columns_styles'][ $column_nr ] . '"' : '';
+					$html         .= '<' . $th_or_td . $column_class . $column_style . '>' . $value . '</' . $th_or_td . '>';
 				}
 				$html .= '</tr>';
 				$html .= 0 === $row_nr ? '</thead>' : ( $lasy_key === $row_nr ? '</tbody>' : '' );
 			}
 			$html .= '</table>';
+
 			return $html;
 		}
 
@@ -215,6 +216,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 			<?php
 			$html = ob_get_contents();
 			ob_end_clean();
+
 			return $html;
 		}
 
@@ -285,8 +287,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * output_admin_menu.
 		 *
-		 * @version 1.7.1
-		 * @since   1.0.0
+		 * @version       1.7.1
+		 * @since         1.0.0
 		 *
 		 * @todo    (dev) restyle
 		 */
@@ -358,16 +360,19 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 
 			if ( ! empty( $table_data ) ) {
 				$table_data = array_merge(
-					array( array(
-							   esc_html__( 'Type', 'wpcodefactory-helper' ),
-							   esc_html__( 'Item', 'wpcodefactory-helper' ),
-							   esc_html__( 'Key', 'wpcodefactory-helper' ),
-							   esc_html__( 'Actions', 'wpcodefactory-helper' ) ) ),
+					array(
+						array(
+							esc_html__( 'Type', 'wpcodefactory-helper' ),
+							esc_html__( 'Item', 'wpcodefactory-helper' ),
+							esc_html__( 'Key', 'wpcodefactory-helper' ),
+							esc_html__( 'Actions', 'wpcodefactory-helper' )
+						)
+					),
 					$table_data
 				);
-				$html .= '<div class="wrap">' .
-						 $this->get_table_html( $table_data, array( 'table_class' => 'widefat striped' ) ) .
-						 '</div>';
+				$html       .= '<div class="wrap">' .
+							   $this->get_table_html( $table_data, array( 'table_class' => 'widefat striped' ) ) .
+							   '</div>';
 			} else {
 				$html .= '<p style="font-style:italic;">' .
 						 sprintf(

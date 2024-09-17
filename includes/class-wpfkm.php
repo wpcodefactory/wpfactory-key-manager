@@ -17,8 +17,8 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		/**
 		 * Plugin version.
 		 *
-		 * @var   string
 		 * @since 1.0.0
+		 * @var   string
 		 */
 		public $version = WPFKM_VERSION;
 
@@ -51,8 +51,8 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		public $plugins_updater;
 
 		/**
-		 * @var   Alg_WPCodeFactory_Helper The single instance of the class
 		 * @since 1.0.0
+		 * @var   Alg_WPCodeFactory_Helper The single instance of the class
 		 */
 		protected static $_instance = null;
 
@@ -71,16 +71,17 @@ if ( ! class_exists( 'WPFKM' ) ) :
 			if ( is_null( self::$_instance ) ) {
 				self::$_instance = new self();
 			}
+
 			return self::$_instance;
 		}
 
 		/**
 		 * Alg_WPCodeFactory_Helper Constructor.
 		 *
-		 * @version 1.4.0
-		 * @since   1.0.0
+		 * @version       1.4.0
+		 * @since         1.0.0
 		 *
-		 * @access  public
+		 * @access        public
 		 *
 		 * @todo    (dev) do not overwrite old check value on "server error"
 		 * @todo    (dev) add "recheck licence now" (e.g. on "server error")
@@ -228,13 +229,15 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		 * @version 1.4.0
 		 * @since   1.0.0
 		 *
-		 * @param   mixed $links
+		 * @param   mixed  $links
+		 *
 		 * @return  array
 		 */
 		function action_links( $links ) {
 			$links[] = '<a href="' . admin_url( 'options-general.php?page=wpcodefactory-helper' ) . '">' .
 			           __( 'Settings', 'wpcodefactory-helper' ) .
 			           '</a>';
+
 			return $links;
 		}
 

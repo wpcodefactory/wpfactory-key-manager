@@ -19,6 +19,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key' ) ) {
 	 */
 	function alg_wpcfh_get_site_key( $item_slug ) {
 		$keys = get_option( 'alg_site_keys', array() );
+
 		return ( isset( $keys[ $item_slug ] ) ? trim( $keys[ $item_slug ] ) : '' );
 	}
 }
@@ -54,6 +55,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status' ) ) {
 	 */
 	function alg_wpcfh_get_site_key_status( $item_slug ) {
 		$statuses = get_option( 'alg_site_keys_statuses', array() );
+
 		return ( isset( $statuses[ $item_slug ] ) ? $statuses[ $item_slug ] : false );
 	}
 }
@@ -78,8 +80,8 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 	/**
 	 * alg_wpcfh_get_site_key_status_message.
 	 *
-	 * @version 1.5.6
-	 * @since   1.0.0
+	 * @version       1.0.0
+	 * @since         1.0.0
 	 *
 	 * @todo    (dev) `SERVER_ERROR`: not used?
 	 * @todo    (dev) No key set: `sprintf( __( 'Key can be set <a href="%s">here</a>.', 'wpcodefactory-helper' ), admin_url( 'options-general.php?page=wpcodefactory-helper&item_slug=' . $item_slug ) )`
@@ -88,7 +90,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 	function alg_wpcfh_get_site_key_status_message( $item_slug ) {
 		$site_key_status = alg_wpcfh_get_site_key_status( $item_slug );
 		if ( false === $site_key_status && '' == alg_wpcfh_get_site_key( $item_slug ) ) {
-			$site_key_status = array();
+			$site_key_status                = array();
 			$site_key_status['client_data'] = 'EMPTY_SITE_KEY';
 		}
 		if ( isset( $site_key_status['server_response']->error->message ) ) {
@@ -106,6 +108,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 						return sprintf( __( 'Server error. Please <a href="%s">try again</a> later.', 'wpcodefactory-helper' ), add_query_arg( 'alg_check_item_site_key', $item_slug ) );
 				}
 			}
+
 			return __( 'Error: Unexpected error.', 'wpcodefactory-helper' );
 		}
 	}

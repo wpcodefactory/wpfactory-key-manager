@@ -65,20 +65,20 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 			);
 			?>
 			<script>
-				jQuery(document).ready(function ($) {
+				jQuery( document ).ready( function ( $ ) {
 					let dataFromPHP = <?php echo json_encode( $php_to_js );?>;
-					let selectElement = document.getElementById('wpfh_api_access_method');
-					selectElement.addEventListener('change', function (event) {
+					let selectElement = document.getElementById( 'wpfh_api_access_method' );
+					selectElement.addEventListener( 'change', function ( event ) {
 						let selectedValue = event.target.value;
 						let data = {
 							action: dataFromPHP.action,
 							security: dataFromPHP.security,
 							selected_value: selectedValue,
 						};
-						$.post(ajaxurl, data, function (response) {
-						});
-					});
-				});
+						$.post( ajaxurl, data, function ( response ) {
+						} );
+					} );
+				} );
 			</script>
 			<?php
 

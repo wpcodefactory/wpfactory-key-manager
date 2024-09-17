@@ -47,10 +47,10 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version       1.0.0
+		 * @since         1.0.0
 		 *
-		 * @see     https://github.com/YahnisElsts/plugin-update-checker/
+		 * @see           https://github.com/YahnisElsts/plugin-update-checker/
 		 *
 		 * @todo    (dev) move `lib` folder up (or to the `assets` folder)?
 		 * @todo    (dev) update library
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 
 			// Handle plugins update
 			$this->plugins_to_update = array();
-			$all_plugins = get_option( 'alg_wpcodefactory_helper_plugins', array() );
+			$all_plugins             = get_option( 'alg_wpcodefactory_helper_plugins', array() );
 			if ( '' == $all_plugins ) {
 				$all_plugins = array();
 			}
@@ -78,13 +78,13 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 				$plugin_file = $this->get_plugin_file_from_slug( $plugin_slug );
 				if ( $is_admin ) {
 					add_filter( 'plugin_action_links_' . $plugin_file, array( $this, 'add_plugin_manage_key_action_link' ), 10, 4 );
-					add_action( 'after_plugin_row_'    . $plugin_file, array( $this, 'maybe_add_after_plugin_row_key_error_message' ), 1, 3 );
+					add_action( 'after_plugin_row_' . $plugin_file, array( $this, 'maybe_add_after_plugin_row_key_error_message' ), 1, 3 );
 				}
 			}
 
 			// Handle themes update
 			$this->themes_to_update = array();
-			$all_themes = get_option( 'alg_wpcodefactory_helper_themes', array() );
+			$all_themes             = get_option( 'alg_wpcodefactory_helper_themes', array() );
 			if ( '' == $all_themes ) {
 				$all_themes = array();
 			}
@@ -108,8 +108,8 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * add_theme_manage_key_links.
 		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
+		 * @version       1.0.0
+		 * @since         1.0.0
 		 *
 		 * @todo    (dev) minimize JS
 		 */
@@ -122,7 +122,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 				$status_messages[ $theme_slug ] = ( ! alg_wpcfh_is_site_key_valid( $theme_slug ) ? strip_tags( alg_wpcfh_get_site_key_status_message( $theme_slug ) ) :
 					__( 'License is valid.', 'wpcodefactory-helper' ) );
 			}
-			wp_enqueue_script(  'alg-wpfh-theme-manage-key-links',
+			wp_enqueue_script( 'alg-wpfh-theme-manage-key-links',
 				wpf_key_manager()->plugin_url() . '/includes/js/alg-wpfh-theme-manage-key-links.js', array( 'jquery' ), wpf_key_manager()->version, true );
 			wp_localize_script( 'alg-wpfh-theme-manage-key-links', 'alg_wpfh_object', array(
 				'themes_to_update' => $this->themes_to_update,
@@ -141,7 +141,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		function add_updater( $item_slug, $item_file_path, $is_plugin = true ) {
 
 			// Build update checker
-			$updater_url = WPFKM_UPDATE_SERVER . '/?alg_update_action=get_metadata&alg_update_slug=' . $item_slug;
+			$updater_url                         = WPFKM_UPDATE_SERVER . '/?alg_update_action=get_metadata&alg_update_slug=' . $item_slug;
 			$this->update_checkers[ $item_slug ] = PucFactory::buildUpdateChecker( $updater_url, $item_file_path, $item_slug );
 
 			// Query args
@@ -187,9 +187,10 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		 * @since   1.1.0
 		 */
 		function add_updater_query_args_theme( $query ) {
-			$plugin_slug = str_replace( 'puc_request_update_query_args_theme-', '', current_filter() );
+			$plugin_slug           = str_replace( 'puc_request_update_query_args_theme-', '', current_filter() );
 			$query['alg_site_key'] = alg_wpcfh_get_site_key( $plugin_slug );
 			$query['alg_site_url'] = wpf_key_manager()->site_url;
+
 			return $query;
 		}
 
@@ -200,9 +201,10 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		 * @since   1.0.0
 		 */
 		function add_updater_query_args( $query ) {
-			$plugin_slug = str_replace( 'puc_request_info_query_args-', '', current_filter() );
+			$plugin_slug           = str_replace( 'puc_request_info_query_args-', '', current_filter() );
 			$query['alg_site_key'] = alg_wpcfh_get_site_key( $plugin_slug );
 			$query['alg_site_url'] = wpf_key_manager()->site_url;
+
 			return $query;
 		}
 
@@ -215,7 +217,8 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		function get_plugin_slug_from_file( $plugin_file ) {
 			$plugin_slug = explode( '/', $plugin_file );
 			$plugin_slug = $plugin_slug[1];
-			$plugin_slug = substr( $plugin_slug, 0, -4 );
+			$plugin_slug = substr( $plugin_slug, 0, - 4 );
+
 			return $plugin_slug;
 		}
 
@@ -229,6 +232,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 			$plugin_slug    = $this->get_plugin_slug_from_file( $plugin_file );
 			$url            = admin_url( 'options-general.php?page=wpcodefactory-helper&item_slug=' . $plugin_slug );
 			$custom_actions = array( '<a href="' . $url . '">' . __( 'Manage site key', 'wpcodefactory-helper' ) . '</a>' );
+
 			return array_merge( $actions, $custom_actions );
 		}
 
