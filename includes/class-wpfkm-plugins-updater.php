@@ -141,7 +141,7 @@ class WPFKM_Plugins_Updater {
 	function add_updater( $item_slug, $item_file_path, $is_plugin = true ) {
 
 		// Build update checker
-		$updater_url = WPFKM_UPDATE_SERVER . '/?wpfkm_update_action=get_metadata&wpfkm_update_slug=' . $item_slug;
+		$updater_url = WPFKM_UPDATE_SERVER . '/?alg_update_action=get_metadata&alg_update_slug=' . $item_slug;
 		$this->update_checkers[ $item_slug ] = PucFactory::buildUpdateChecker( $updater_url, $item_file_path, $item_slug );
 
 		// Query args
