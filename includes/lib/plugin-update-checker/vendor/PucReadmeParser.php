@@ -186,7 +186,7 @@ class PucReadmeParser {
 
 
 		// dump the non-special sections into $remaining_content
-		// their order will be determined by their original order in the changelog.txt
+		// their order will be determined by their original order in the CHANGELOG.md
 		$remaining_content = '';
 		foreach ( $sections as $s_name => $s_data ) {
 			$remaining_content .= "\n<h3>{$s_data['title']}</h3>\n{$s_data['content']}";

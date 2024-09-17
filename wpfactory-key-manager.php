@@ -2,12 +2,17 @@
 
 if ( ! function_exists( 'wpf_key_manager' ) ) {
 	/**
-	 * Returns the main instance of Alg_WPCodeFactory_Helper to prevent the need to use globals.
+	 * Returns the main instance of WPFKM to prevent the need to use globals.
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 *
+	 * @return void|WPFKM|null
 	 */
 	function wpf_key_manager() {
+		if ( function_exists( 'alg_wpcodefactory_helper' ) ) {
+			return;
+		}
 
 		defined( 'ABSPATH' ) || exit;
 
