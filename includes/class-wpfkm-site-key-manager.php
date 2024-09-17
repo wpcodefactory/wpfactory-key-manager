@@ -108,7 +108,7 @@ class WPFKM_Site_Key_Manager {
 	function admin_notice_site_key_status() {
 		if (
 			isset( $_GET['page'] ) &&
-			'wpf-key-manager' === $_GET['page'] &&
+			'wpfkm' === $_GET['page'] &&
 			isset( $_GET['item_slug'] )
 		) {
 			$item_slug = sanitize_text_field( $_GET['item_slug'] );

@@ -118,6 +118,8 @@ class WPFKM_Plugins_Updater {
 			return;
 		}
 		$status_messages = array();
+		error_log('---');
+		error_log(print_r($this->themes_to_update,true));
 		foreach ( $this->themes_to_update as $theme_slug ) {
 			$status_messages[ $theme_slug ] = ( ! wpfkm_is_site_key_valid( $theme_slug ) ? strip_tags( wpfkm_get_site_key_status_message( $theme_slug ) ) :
 				__( 'License is valid.', 'wpf-key-manager' ) );
