@@ -121,7 +121,7 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 				<tbody>
 				<tr>
 					<th scope="row">
-						<label for="wpfh_api_access_method"><?php _e( 'API access method', 'wpcodefactory-helper' ); ?></label>
+						<label for="wpfh_api_access_method"><?php _e( 'API access method', 'wpcodefactory-key-manager' ); ?></label>
 					</th>
 					<td>
 						<select name="wpfh_api_access_method" id="wpfh_api_access_method" class="postform">
@@ -132,7 +132,7 @@ if ( ! class_exists( 'WPFKM_API_Access_Method_Option' ) ) {
 							<?php endforeach; ?>
 						</select>
 						<p class="description"
-						   id="new-admin-email-description"><?php _e( 'The preferred way for accessing WPFactory API. If something goes wrong, change it.', 'wpcodefactory-helper' ) ?>
+						   id="new-admin-email-description"><?php _e( 'The preferred way for accessing WPFactory API. If something goes wrong, change it.', 'wpcodefactory-key-manager' ) ?>
 						</p>
 					</td>
 				</tr>

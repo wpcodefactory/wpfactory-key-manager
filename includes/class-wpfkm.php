@@ -121,7 +121,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		 * @since   1.3.1
 		 */
 		function localize() {
-			load_plugin_textdomain( 'wpcodefactory-helper', false, dirname( plugin_basename( WPFKM_FILE ) ) . '/langs/' );
+			load_plugin_textdomain( 'wpcodefactory-key-manager', false, dirname( plugin_basename( WPFKM_FILE ) ) . '/langs/' );
 		}
 
 		/**
@@ -235,7 +235,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		 */
 		function action_links( $links ) {
 			$links[] = '<a href="' . admin_url( 'options-general.php?page=wpcodefactory-helper' ) . '">' .
-			           __( 'Settings', 'wpcodefactory-helper' ) .
+			           __( 'Settings', 'wpcodefactory-key-manager' ) .
 			           '</a>';
 
 			return $links;

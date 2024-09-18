@@ -120,13 +120,13 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 			$status_messages = array();
 			foreach ( $this->themes_to_update as $theme_slug ) {
 				$status_messages[ $theme_slug ] = ( ! alg_wpcfh_is_site_key_valid( $theme_slug ) ? strip_tags( alg_wpcfh_get_site_key_status_message( $theme_slug ) ) :
-					__( 'License is valid.', 'wpcodefactory-helper' ) );
+					__( 'License is valid.', 'wpcodefactory-key-manager' ) );
 			}
 			wp_enqueue_script( 'alg-wpfh-theme-manage-key-links',
 				wpf_key_manager()->plugin_url() . '/includes/js/alg-wpfh-theme-manage-key-links.js', array( 'jquery' ), wpf_key_manager()->version, true );
 			wp_localize_script( 'alg-wpfh-theme-manage-key-links', 'alg_wpfh_object', array(
 				'themes_to_update' => $this->themes_to_update,
-				'manage_key_text'  => __( 'Manage site key', 'wpcodefactory-helper' ),
+				'manage_key_text'  => __( 'Manage site key', 'wpcodefactory-key-manager' ),
 				'admin_url'        => admin_url(),
 				'status_messages'  => $status_messages,
 			) );
@@ -142,6 +142,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 
 			// Build update checker
 			$updater_url                         = WPFKM_UPDATE_SERVER . '/?alg_update_action=get_metadata&alg_update_slug=' . $item_slug;
+
 			$this->update_checkers[ $item_slug ] = PucFactory::buildUpdateChecker( $updater_url, $item_file_path, $item_slug );
 
 			// Query args
@@ -231,7 +232,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		function add_plugin_manage_key_action_link( $actions, $plugin_file, $plugin_data, $context ) {
 			$plugin_slug    = $this->get_plugin_slug_from_file( $plugin_file );
 			$url            = admin_url( 'options-general.php?page=wpcodefactory-helper&item_slug=' . $plugin_slug );
-			$custom_actions = array( '<a href="' . $url . '">' . __( 'Manage site key', 'wpcodefactory-helper' ) . '</a>' );
+			$custom_actions = array( '<a href="' . $url . '">' . __( 'Manage site key', 'wpcodefactory-key-manager' ) . '</a>' );
 
 			return array_merge( $actions, $custom_actions );
 		}

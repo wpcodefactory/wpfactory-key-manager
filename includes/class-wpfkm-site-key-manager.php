@@ -108,7 +108,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		function admin_notice_site_key_status() {
 			if (
 				isset( $_GET['page'] ) &&
-				'wpcodefactory-helper' === $_GET['page'] &&
+				'wpcodefactory-key-manager' === $_GET['page'] &&
 				isset( $_GET['item_slug'] )
 			) {
 				$item_slug       = sanitize_text_field( $_GET['item_slug'] );
@@ -129,10 +129,10 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		 */
 		function add_admin_menu() {
 			add_options_page(
-				__( 'WPFactory Key Manager', 'wpcodefactory-helper' ),
-				__( 'WPFactory', 'wpcodefactory-helper' ),
+				__( 'WPFactory Key Manager', 'wpcodefactory-key-manager' ),
+				__( 'WPFactory', 'wpcodefactory-key-manager' ),
 				'manage_options',
-				'wpcodefactory-helper',
+				'wpcodefactory-key-manager',
 				array( $this, 'output_admin_menu' )
 			);
 		}
@@ -205,7 +205,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				<tbody>
 				<tr>
 					<th scope="row">
-						<label><?php _e( 'Site URL', 'wpcodefactory-helper' ); ?></label>
+						<label><?php _e( 'Site URL', 'wpcodefactory-key-manager' ); ?></label>
 					</th>
 					<td>
 						<code> <?php echo esc_url( wpf_key_manager()->site_url ) ?> </code>
@@ -237,7 +237,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 			if ( isset( $_GET['item_slug'] ) ) {
 				$item_slug       = sanitize_text_field( $_GET['item_slug'] );
 				$key             = alg_wpcfh_get_site_key( $item_slug );
-				$item_type_label = 'plugin' === $_GET['item_type'] ? __( 'Plugin', 'wpcodefactory-helper' ) : __( 'Theme', 'wpcodefactory-helper' );
+				$item_type_label = 'plugin' === $_GET['item_type'] ? __( 'Plugin', 'wpcodefactory-key-manager' ) : __( 'Theme', 'wpcodefactory-key-manager' );
 				if ( isset( $_GET['item_type'] ) && 'theme' == $_GET['item_type'] ) {
 					$item_label = ( '' != $all_themes[ $item_slug ]->get( 'Name' ) ? $all_themes[ $item_slug ]->get( 'Name' ) : esc_html( $item_slug ) );
 				} else {
@@ -250,7 +250,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 					<tr>
 						<th scope="row">
 							<label for="alg_site_key">
-								<?php echo sprintf( esc_html__( '%s key', 'wpcodefactory-helper' ), $item_type_label ); ?>
+								<?php echo sprintf( esc_html__( '%s key', 'wpcodefactory-key-manager' ), $item_type_label ); ?>
 							</label>
 						</th>
 						<td>
@@ -259,11 +259,11 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 									   value="<?php echo esc_attr( $key ); ?>">
 								<input type="hidden" name="alg_item_slug" value="<?php echo esc_attr( $item_slug ); ?>">
 								<input class="button-primary" type="submit" name="alg_set_site_key"
-									   value="<?php echo esc_attr__( 'Set key', 'wpcodefactory-helper' ); ?>">
+									   value="<?php echo esc_attr__( 'Set key', 'wpcodefactory-key-manager' ); ?>">
 								<input class="button-primary" type="submit" name="alg_set_site_key_all"
-									   value="<?php echo esc_attr__( 'Set this key for all items', 'wpcodefactory-helper' ); ?>"
-									   title="<?php echo esc_attr__( 'Useful for the &quot;All Plugins Access&quot; users.', 'wpcodefactory-helper' ); ?>"
-									   onclick="return confirm('<?php echo esc_html__( 'Are you sure?', 'wpcodefactory-helper' ); ?>');">
+									   value="<?php echo esc_attr__( 'Set this key for all items', 'wpcodefactory-key-manager' ); ?>"
+									   title="<?php echo esc_attr__( 'Useful for the &quot;All Plugins Access&quot; users.', 'wpcodefactory-key-manager' ); ?>"
+									   onclick="return confirm('<?php echo esc_html__( 'Are you sure?', 'wpcodefactory-key-manager' ); ?>');">
 								<p class="description">
 									<?php echo sprintf(
 										__( 'Key for %s %s' ),
@@ -299,11 +299,11 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 
 			$html = '';
 			$html .= '<div class="wrap">';
-			$html .= '<h2>' . esc_html__( 'WPFactory Key Manager', 'wpcodefactory-helper' ) . '</h2>';
+			$html .= '<h2>' . esc_html__( 'WPFactory Key Manager', 'wpcodefactory-key-manager' ) . '</h2>';
 			$html .= $this->get_site_url_html();
 			$html .= apply_filters( 'wpfactory_helper_plugins_table_html_before', '' );
 			$html .= $this->get_key_setting_input_html( $all_plugins, $all_themes );
-			$html .= '<h2 style="margin-bottom:23px;">' . esc_html__( 'WPFactory items', 'wpcodefactory-helper' ) . '</h2>';
+			$html .= '<h2 style="margin-bottom:23px;">' . esc_html__( 'WPFactory items', 'wpcodefactory-key-manager' ) . '</h2>';
 
 			$table_data = array();
 
@@ -311,7 +311,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				$plugin_file   = $plugin_slug . '/' . $plugin_slug . '.php';
 				$item_site_key = alg_wpcfh_get_site_key( $plugin_slug );
 				$table_data[]  = array(
-					esc_html__( 'Plugin', 'wpcodefactory-helper' ),
+					esc_html__( 'Plugin', 'wpcodefactory-key-manager' ),
 					( isset( $all_plugins[ $plugin_file ]['Name'] ) ?
 						$all_plugins[ $plugin_file ]['Name'] :
 						$plugin_slug
@@ -320,13 +320,13 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 					sprintf(
 						'<a class="button button-primary" href="%s">%s</a>',
 						esc_url( add_query_arg( array( 'item_slug' => $plugin_slug, 'item_type' => 'plugin' ) ) ),
-						esc_html__( 'Set key', 'wpcodefactory-helper' )
+						esc_html__( 'Set key', 'wpcodefactory-key-manager' )
 					) .
 					( '' != $item_site_key ?
 						' ' . sprintf(
 							'<a class="button button-secondary" href="%s">%s</a>',
 							esc_url( add_query_arg( array( 'alg_check_item_site_key' => $plugin_slug ) ) ),
-							esc_html__( 'Check key', 'wpcodefactory-helper' )
+							esc_html__( 'Check key', 'wpcodefactory-key-manager' )
 						) :
 						''
 					),
@@ -336,7 +336,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 			foreach ( wpf_key_manager()->plugins_updater->themes_to_update as $theme_slug ) {
 				$item_site_key = alg_wpcfh_get_site_key( $theme_slug );
 				$table_data[]  = array(
-					esc_html__( 'Theme', 'wpcodefactory-helper' ),
+					esc_html__( 'Theme', 'wpcodefactory-key-manager' ),
 					( '' != $all_themes[ $theme_slug ]->get( 'Name' ) ?
 						$all_themes[ $theme_slug ]->get( 'Name' ) :
 						$theme_slug
@@ -345,13 +345,13 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 					sprintf(
 						'<a class="button button-primary" href="%s">%s</a>',
 						esc_url( add_query_arg( array( 'item_slug' => $theme_slug, 'item_type' => 'theme' ) ) ),
-						esc_html__( 'Set key', 'wpcodefactory-helper' )
+						esc_html__( 'Set key', 'wpcodefactory-key-manager' )
 					) .
 					( '' != $item_site_key ?
 						' ' . sprintf(
 							'<a class="button button-secondary" href="%s">%s</a>',
 							esc_url( add_query_arg( array( 'alg_check_item_site_key' => $theme_slug ) ) ),
-							esc_html__( 'Check key', 'wpcodefactory-helper' )
+							esc_html__( 'Check key', 'wpcodefactory-key-manager' )
 						) :
 						''
 					),
@@ -362,10 +362,10 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				$table_data = array_merge(
 					array(
 						array(
-							esc_html__( 'Type', 'wpcodefactory-helper' ),
-							esc_html__( 'Item', 'wpcodefactory-helper' ),
-							esc_html__( 'Key', 'wpcodefactory-helper' ),
-							esc_html__( 'Actions', 'wpcodefactory-helper' )
+							esc_html__( 'Type', 'wpcodefactory-key-manager' ),
+							esc_html__( 'Item', 'wpcodefactory-key-manager' ),
+							esc_html__( 'Key', 'wpcodefactory-key-manager' ),
+							esc_html__( 'Actions', 'wpcodefactory-key-manager' )
 						)
 					),
 					$table_data
@@ -376,7 +376,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 			} else {
 				$html .= '<p style="font-style:italic;">' .
 						 sprintf(
-							 __( 'You have no items from %s installed.', 'wpcodefactory-helper' ),
+							 __( 'You have no items from %s installed.', 'wpcodefactory-key-manager' ),
 							 '<a target="_blank" href="' . wpf_key_manager()->update_server . '">' .
 							 wpf_key_manager()->update_server_text .
 							 '</a>'
@@ -388,7 +388,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 					 sprintf(
 						 '<a class="button button-secondary" style="margin-top:18px;" href="%s">%s</a>',
 						 esc_url( add_query_arg( array( 'alg_update_item_list' => '1' ) ) ),
-						 esc_html__( 'Update item list manually', 'wpcodefactory-helper' )
+						 esc_html__( 'Update item list manually', 'wpcodefactory-key-manager' )
 					 ) .
 					 '</p>';
 
