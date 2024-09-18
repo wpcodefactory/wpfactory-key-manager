@@ -231,7 +231,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		 */
 		function add_plugin_manage_key_action_link( $actions, $plugin_file, $plugin_data, $context ) {
 			$plugin_slug    = $this->get_plugin_slug_from_file( $plugin_file );
-			$url            = admin_url( 'options-general.php?page=wpcodefactory-key-manager&item_slug=' . $plugin_slug );
+			$url            = admin_url( 'options-general.php?page=wpcodefactory-key-manager&item_type=plugin&item_slug=' . $plugin_slug );
 			$custom_actions = array( '<a href="' . $url . '">' . __( 'Manage site key', 'wpcodefactory-key-manager' ) . '</a>' );
 
 			return array_merge( $actions, $custom_actions );
