@@ -234,7 +234,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		 * @return  array
 		 */
 		function action_links( $links ) {
-			$links[] = '<a href="' . admin_url( 'options-general.php?page=wpcodefactory-helper' ) . '">' .
+			$links[] = '<a href="' . admin_url( 'options-general.php?page=wpcodefactory-key-manager' ) . '">' .
 			           __( 'Settings', 'wpcodefactory-key-manager' ) .
 			           '</a>';
 
