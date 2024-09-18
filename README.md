@@ -41,3 +41,18 @@ Installation via Composer. Instructions to setup the `composer.json`.
   }
 }
 ```
+
+## How to use it?
+First, just require Composer autoloader:
+```php
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+```
+
+Then initialize the library with `wpf_key_manager()`.
+
+```php
+// Initializes WPFactory Key Manager library.
+wpf_key_manager();
+```
+
+It's probably a good idea to use it only on pro version.
