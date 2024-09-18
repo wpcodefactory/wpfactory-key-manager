@@ -55,4 +55,5 @@ Then initialize the library with `wpf_key_manager()`.
 wpf_key_manager();
 ```
 
-It's probably a good idea to use it only on pro version.
+> [!NOTE]  
+> It's probably a good idea to use it only on pro version.
