@@ -23,6 +23,14 @@ Installation via Composer. Instructions to setup the `composer.json`.
 "wpfactory/wpfactory-key-manager": "*"
 ```
 
+3. Use `preferred-install` parameter set as `dist` on `config`.
+
+```json
+"config": {
+  "preferred-install": "dist"
+}
+```
+
 **Full Example:**
 
 ```json
