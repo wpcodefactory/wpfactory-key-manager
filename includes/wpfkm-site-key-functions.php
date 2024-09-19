@@ -84,7 +84,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 	 * @since         1.0.0
 	 *
 	 * @todo    (dev) `SERVER_ERROR`: not used?
-	 * @todo    (dev) No key set: `sprintf( __( 'Key can be set <a href="%s">here</a>.', 'wpcodefactory-key-manager' ), admin_url( 'options-general.php?page=wpcodefactory-helper&item_slug=' . $item_slug ) )`
+	 * @todo    (dev) No key set: `sprintf( __( 'Key can be set <a href="%s">here</a>.', 'wpfactory-key-manager' ), admin_url( 'options-general.php?page=wpcodefactory-helper&item_slug=' . $item_slug ) )`
 	 * @todo    (dev) check `false === $site_key_status && '' == alg_wpcfh_get_site_key( $item_slug )`
 	 */
 	function alg_wpcfh_get_site_key_status_message( $item_slug ) {
@@ -99,17 +99,17 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 			if ( isset( $site_key_status['client_data'] ) ) {
 				switch ( $site_key_status['client_data'] ) {
 					case 'EMPTY_SITE_KEY':
-						return __( 'No key set.', 'wpcodefactory-key-manager' ) . ' ' .
-						       sprintf( __( 'To get the key, please visit <a target="_blank" href="%s">your account page at %s</a>.', 'wpcodefactory-key-manager' ),
+						return __( 'No key set.', 'wpfactory-key-manager' ) . ' ' .
+						       sprintf( __( 'To get the key, please visit <a target="_blank" href="%s">your account page at %s</a>.', 'wpfactory-key-manager' ),
 							       wpf_key_manager()->update_server . '/my-account/downloads/', wpf_key_manager()->update_server_text );
 					case 'NO_RESPONSE':
-						return sprintf( __( 'No response from server. Please <a href="%s">try again</a> later.', 'wpcodefactory-key-manager' ), add_query_arg( 'alg_check_item_site_key', $item_slug ) );
+						return sprintf( __( 'No response from server. Please <a href="%s">try again</a> later.', 'wpfactory-key-manager' ), add_query_arg( 'alg_check_item_site_key', $item_slug ) );
 					case 'SERVER_ERROR':
-						return sprintf( __( 'Server error. Please <a href="%s">try again</a> later.', 'wpcodefactory-key-manager' ), add_query_arg( 'alg_check_item_site_key', $item_slug ) );
+						return sprintf( __( 'Server error. Please <a href="%s">try again</a> later.', 'wpfactory-key-manager' ), add_query_arg( 'alg_check_item_site_key', $item_slug ) );
 				}
 			}
 
-			return __( 'Error: Unexpected error.', 'wpcodefactory-key-manager' );
+			return __( 'Error: Unexpected error.', 'wpfactory-key-manager' );
 		}
 	}
 }

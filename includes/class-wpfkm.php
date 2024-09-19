@@ -106,12 +106,6 @@ if ( ! class_exists( 'WPFKM' ) ) :
 
 			// Include required files
 			$this->includes();
-
-			// Admin
-			if ( is_admin() ) {
-				add_filter( 'plugin_action_links_' . plugin_basename( WPFKM_FILE ), array( $this, 'action_links' ) );
-			}
-
 		}
 
 		/**
@@ -121,7 +115,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		 * @since   1.3.1
 		 */
 		function localize() {
-			load_plugin_textdomain( 'wpcodefactory-key-manager', false, dirname( plugin_basename( WPFKM_FILE ) ) . '/langs/' );
+			load_plugin_textdomain( 'wpfactory-key-manager', false, dirname( plugin_basename( WPFKM_FILE ) ) . '/langs/' );
 		}
 
 		/**
@@ -221,24 +215,6 @@ if ( ! class_exists( 'WPFKM' ) ) :
 			}
 
 			return $response;
-		}
-
-		/**
-		 * Show action links on the plugin screen.
-		 *
-		 * @version 1.4.0
-		 * @since   1.0.0
-		 *
-		 * @param   mixed  $links
-		 *
-		 * @return  array
-		 */
-		function action_links( $links ) {
-			$links[] = '<a href="' . admin_url( 'options-general.php?page=wpcodefactory-key-manager' ) . '">' .
-			           __( 'Settings', 'wpcodefactory-key-manager' ) .
-			           '</a>';
-
-			return $links;
 		}
 
 		/**
