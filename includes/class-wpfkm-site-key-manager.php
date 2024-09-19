@@ -2,11 +2,13 @@
 /**
  * WPFactory Key Manager - Admin Site Key Manager
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
  */
+
+use WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -17,15 +19,20 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since   1.0.0
 		 */
 		function __construct() {
+
+			// WPFactory admin menu.
+			WPFactory_Admin_Menu::get_instance();
+
 			add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 			add_action( 'admin_init', array( $this, 'set_item_site_key' ) );
 			add_action( 'admin_init', array( $this, 'update_item_list' ) );
 			add_action( 'admin_init', array( $this, 'check_item_site_key' ) );
 			add_action( 'admin_notices', array( $this, 'admin_notice_site_key_status' ) );
+
 		}
 
 		/**
@@ -124,27 +131,19 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * add_admin_menu.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since   1.0.0
 		 */
 		function add_admin_menu() {
-			add_options_page(
-				__( 'WPFactory Key Manager', 'wpfactory-key-manager' ),
-				__( 'WPFactory', 'wpfactory-key-manager' ),
-				'manage_options',
-				'wpfactory-key-manager',
-				array( $this, 'output_admin_menu' )
-			);
-			// @todo Add as a submenu page.
-			/*\add_submenu_page(
-				'wpfactory',
+			\add_submenu_page(
+				WPFactory_Admin_Menu::get_instance()->get_menu_slug(),
 				__( 'WPFactory Key Manager', 'wpcodefactory-key-manager' ),
 				__( 'Key Manager', 'wpcodefactory-key-manager' ),
 				'manage_options',
-				'wpcodefactory-key-manager',
+				'wpfactory-key-manager',
 				array( $this, 'output_admin_menu' ),
 				20
-			);*/
+			);
 		}
 
 		/**

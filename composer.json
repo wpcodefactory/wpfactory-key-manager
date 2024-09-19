@@ -7,6 +7,14 @@
     "files": [
       "wpfactory-key-manager.php"
     ]
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-admin-menu"
+    }
+  ],
+  "require": {
+    "wpfactory/wpfactory-admin-menu": "dev-master"
   }
-
 }

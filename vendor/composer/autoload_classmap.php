@@ -14,6 +14,8 @@ return array(
     'WPFKM_Crons' => $baseDir . '/includes/class-wpfkm-crons.php',
     'WPFKM_Plugins_Updater' => $baseDir . '/includes/class-wpfkm-plugins-updater.php',
     'WPFKM_Site_Key_Manager' => $baseDir . '/includes/class-wpfkm-site-key-manager.php',
+    'WPFactory\\WPFactory_Admin_Menu\\Singleton' => $vendorDir . '/wpfactory/wpfactory-admin-menu/src/php/trait-singleton.php',
+    'WPFactory\\WPFactory_Admin_Menu\\WPFactory_Admin_Menu' => $vendorDir . '/wpfactory/wpfactory-admin-menu/src/php/class-wpfactory-admin-menu.php',
     'YahnisElsts\\PluginUpdateChecker\\v5\\PucFactory' => $baseDir . '/includes/lib/plugin-update-checker/Puc/v5/PucFactory.php',
     'YahnisElsts\\PluginUpdateChecker\\v5p4\\Autoloader' => $baseDir . '/includes/lib/plugin-update-checker/Puc/v5p4/Autoloader.php',
     'YahnisElsts\\PluginUpdateChecker\\v5p4\\DebugBar\\Extension' => $baseDir . '/includes/lib/plugin-update-checker/Puc/v5p4/DebugBar/Extension.php',

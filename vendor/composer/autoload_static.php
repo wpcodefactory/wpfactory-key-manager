@@ -19,6 +19,8 @@ class ComposerStaticInite9ad05f77d58a398e42116bd98279b71
         'WPFKM_Crons' => __DIR__ . '/../..' . '/includes/class-wpfkm-crons.php',
         'WPFKM_Plugins_Updater' => __DIR__ . '/../..' . '/includes/class-wpfkm-plugins-updater.php',
         'WPFKM_Site_Key_Manager' => __DIR__ . '/../..' . '/includes/class-wpfkm-site-key-manager.php',
+        'WPFactory\\WPFactory_Admin_Menu\\Singleton' => __DIR__ . '/..' . '/wpfactory/wpfactory-admin-menu/src/php/trait-singleton.php',
+        'WPFactory\\WPFactory_Admin_Menu\\WPFactory_Admin_Menu' => __DIR__ . '/..' . '/wpfactory/wpfactory-admin-menu/src/php/class-wpfactory-admin-menu.php',
         'YahnisElsts\\PluginUpdateChecker\\v5\\PucFactory' => __DIR__ . '/../..' . '/includes/lib/plugin-update-checker/Puc/v5/PucFactory.php',
         'YahnisElsts\\PluginUpdateChecker\\v5p4\\Autoloader' => __DIR__ . '/../..' . '/includes/lib/plugin-update-checker/Puc/v5p4/Autoloader.php',
         'YahnisElsts\\PluginUpdateChecker\\v5p4\\DebugBar\\Extension' => __DIR__ . '/../..' . '/includes/lib/plugin-update-checker/Puc/v5p4/DebugBar/Extension.php',

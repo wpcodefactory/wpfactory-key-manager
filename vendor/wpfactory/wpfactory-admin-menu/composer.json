@@ -1,0 +1,8 @@
+{
+  "name": "wpfactory/wpfactory-admin-menu",
+  "autoload": {
+    "classmap": [
+      "src/php/"
+    ]
+  }
+}
