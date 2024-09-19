@@ -25,7 +25,7 @@ Installation via Composer. Instructions to setup the `composer.json`.
 
 ```json
 "require": {    
-    "wpfactory/wpfactory-key-manager": "dev-master",    
+    "wpfactory/wpfactory-key-manager": "*",    
     "wpfactory/wpfactory-admin-menu": "*"
   },
 ```
