@@ -13,14 +13,21 @@ Installation via Composer. Instructions to setup the `composer.json`.
     {
       "type": "vcs",
       "url": "https://github.com/wpcodefactory/wpfactory-key-manager"
-    }
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-admin-menu"
+    },
 ]
 ```
 
-2. Require the library:
+2. Require the library and its dependencies:
 
 ```json
-"wpfactory/wpfactory-key-manager": "*"
+"require": {    
+    "wpfactory/wpfactory-key-manager": "dev-master",    
+    "wpfactory/wpfactory-admin-menu": "*"
+  },
 ```
 
 3. Use `preferred-install` parameter set as `dist` on `config`.
@@ -39,10 +46,15 @@ Installation via Composer. Instructions to setup the `composer.json`.
     {
       "type": "vcs",
       "url": "https://github.com/wpcodefactory/wpfactory-key-manager"
-    }
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-admin-menu"
+    },
   ],
   "require": {    
-    "wpfactory/wpfactory-key-manager": "*"
+    "wpfactory/wpfactory-key-manager": "*",
+    "wpfactory/wpfactory-admin-menu": "*"
   },
   "config": {
     "preferred-install": "dist"
