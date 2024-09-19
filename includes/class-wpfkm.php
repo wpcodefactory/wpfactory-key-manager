@@ -52,20 +52,20 @@ if ( ! class_exists( 'WPFKM' ) ) :
 
 		/**
 		 * @since 1.0.0
-		 * @var   Alg_WPCodeFactory_Helper The single instance of the class
+		 * @var   WPFKM The single instance of the class
 		 */
 		protected static $_instance = null;
 
 		/**
-		 * Main Alg_WPCodeFactory_Helper Instance
+		 * Main WPFKM Instance
 		 *
-		 * Ensures only one instance of Alg_WPCodeFactory_Helper is loaded or can be loaded.
+		 * Ensures only one instance of WPFKM is loaded or can be loaded.
 		 *
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 *
 		 * @static
-		 * @return  Alg_WPCodeFactory_Helper - Main instance
+		 * @return  WPFKM - Main instance
 		 */
 		public static function instance() {
 			if ( is_null( self::$_instance ) ) {
@@ -76,7 +76,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		}
 
 		/**
-		 * Alg_WPCodeFactory_Helper Constructor.
+		 * WPFKM Constructor.
 		 *
 		 * @version       1.4.0
 		 * @since         1.0.0

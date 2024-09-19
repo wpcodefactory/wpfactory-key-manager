@@ -126,7 +126,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 				wpf_key_manager()->plugin_url() . '/includes/js/alg-wpfh-theme-manage-key-links.js', array( 'jquery' ), wpf_key_manager()->version, true );
 			wp_localize_script( 'alg-wpfh-theme-manage-key-links', 'alg_wpfh_object', array(
 				'themes_to_update' => $this->themes_to_update,
-				'manage_key_text'  => __( 'Manage site key', 'wpfactory-key-manager' ),
+				'manage_key_text'  => __( 'Key', 'wpfactory-key-manager' ),
 				'admin_url'        => admin_url(),
 				'status_messages'  => $status_messages,
 			) );
@@ -232,7 +232,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		function add_plugin_manage_key_action_link( $actions, $plugin_file, $plugin_data, $context ) {
 			$plugin_slug    = $this->get_plugin_slug_from_file( $plugin_file );
 			$url            = admin_url( 'admin.php?page=wpfactory-key-manager&item_type=plugin&item_slug=' . $plugin_slug );
-			$custom_actions = array( '<a href="' . $url . '">' . __( 'Manage site key', 'wpfactory-key-manager' ) . '</a>' );
+			$custom_actions = array( '<a href="' . $url . '">' . __( 'Key', 'wpfactory-key-manager' ) . '</a>' );
 
 			return array_merge( $actions, $custom_actions );
 		}
