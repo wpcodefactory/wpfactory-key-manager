@@ -28,7 +28,7 @@ jQuery( document ).ready( function() {
 	/**
 	 * Main function.
 	 *
-	 * @version 1.0.0
+	 * @version 1.0.1
 	 * @since   1.0.0
 	 */
 	jQuery( 'div.theme-actions' ).each( function() {
@@ -37,7 +37,7 @@ jQuery( document ).ready( function() {
 			jQuery( this ).append( '<a' +
 					' title="' + wpfkm_object.status_messages[ theme_slug ] + '"' +
 					' class="button wpfkm_manage_key_theme"' +
-					' href="' + wpfkm_object.admin_url + 'options-general.php?page=wpfkm&item_type=theme&item_slug=' + theme_slug + '">' +
+					' href="' + wpfkm_object.admin_url + 'admin.php?page=wpfactory-key-manager&item_type=theme&item_slug=' + theme_slug + '">' +
 				wpfkm_object.manage_key_text + '</a>' );
 		}
 	} );
