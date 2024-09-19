@@ -8,3 +8,8 @@ vendor/wpfactory/wpf-settings-exporter export-ignore
 vendor/wpfactory/wpf-documentor export-ignore
 # GIT - Release version
 /git-tag.sh export-ignore
+composer.lock export-ignore
+README.md export-ignore
+CHANGELOG.md export-ignore
+.gitattributes export-ignore
+composer.json export-ignore

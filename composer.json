@@ -15,6 +15,6 @@
     }
   ],
   "require": {
-    "wpfactory/wpfactory-admin-menu": "dev-master"
+    "wpfactory/wpfactory-admin-menu": "*"
   }
 }

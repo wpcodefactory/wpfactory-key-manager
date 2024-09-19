@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5714e720eddd23902651fbbb21361b6",
+    "content-hash": "7da8c81afb1288d339ed6f8f9d095651",
     "packages": [
         {
             "name": "wpfactory/wpfactory-admin-menu",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:wpcodefactory/wpfactory-admin-menu.git",
@@ -20,7 +20,6 @@
                 "reference": "7fe327fecf08fc5a14c3be54ad94a8a7006b4a08",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -28,7 +27,7 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/wpcodefactory/wpfactory-admin-menu/tree/master",
+                "source": "https://github.com/wpcodefactory/wpfactory-admin-menu/tree/v1.0.0",
                 "issues": "https://github.com/wpcodefactory/wpfactory-admin-menu/issues"
             },
             "time": "2024-09-19T18:53:36+00:00"
@@ -37,9 +36,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "wpfactory/wpfactory-admin-menu": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

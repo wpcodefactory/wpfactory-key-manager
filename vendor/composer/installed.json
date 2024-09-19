@@ -2,8 +2,8 @@
     "packages": [
         {
             "name": "wpfactory/wpfactory-admin-menu",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:wpcodefactory/wpfactory-admin-menu.git",
@@ -16,7 +16,6 @@
                 "shasum": ""
             },
             "time": "2024-09-19T18:53:36+00:00",
-            "default-branch": true,
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -25,7 +24,7 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/wpcodefactory/wpfactory-admin-menu/tree/master",
+                "source": "https://github.com/wpcodefactory/wpfactory-admin-menu/tree/v1.0.0",
                 "issues": "https://github.com/wpcodefactory/wpfactory-admin-menu/issues"
             },
             "install-path": "../wpfactory/wpfactory-admin-menu"
