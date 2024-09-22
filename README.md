@@ -50,7 +50,7 @@ Installation via Composer. Instructions to setup the `composer.json`.
     {
       "type": "vcs",
       "url": "https://github.com/wpcodefactory/wpfactory-admin-menu"
-    },
+    }
   ],
   "require": {    
     "wpfactory/wpfactory-key-manager": "*",
