@@ -24,10 +24,10 @@ Installation via Composer. Instructions to setup the `composer.json`.
 2. Require the library and its dependencies:
 
 ```json
-"require": {    
-    "wpfactory/wpfactory-key-manager": "*",    
-    "wpfactory/wpfactory-admin-menu": "*"
-  },
+"require": {
+  "wpfactory/wpfactory-key-manager": "*",    
+  "wpfactory/wpfactory-admin-menu": "*"
+},
 ```
 
 3. Use `preferred-install` parameter set as `dist` on `config`.
