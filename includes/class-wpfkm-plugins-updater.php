@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Plugins Updater Class
  *
- * @version 1.0.1
+ * @version 1.0.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -108,7 +108,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * add_theme_manage_key_links.
 		 *
-		 * @version       1.0.0
+		 * @version       1.0.2
 		 * @since         1.0.0
 		 *
 		 * @todo    (dev) minimize JS
@@ -126,7 +126,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 				wpf_key_manager()->plugin_url() . '/includes/js/alg-wpfh-theme-manage-key-links.js', array( 'jquery' ), wpf_key_manager()->version, true );
 			wp_localize_script( 'alg-wpfh-theme-manage-key-links', 'alg_wpfh_object', array(
 				'themes_to_update' => $this->themes_to_update,
-				'manage_key_text'  => __( 'Key', 'wpfactory-key-manager' ),
+				'manage_key_text'  => __( 'License', 'wpfactory-key-manager' ),
 				'admin_url'        => admin_url(),
 				'status_messages'  => $status_messages,
 			) );
@@ -226,13 +226,13 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * add_plugin_manage_key_action_link.
 		 *
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * @since   1.0.0
 		 */
 		function add_plugin_manage_key_action_link( $actions, $plugin_file, $plugin_data, $context ) {
 			$plugin_slug    = $this->get_plugin_slug_from_file( $plugin_file );
 			$url            = admin_url( 'admin.php?page=wpfactory-key-manager&item_type=plugin&item_slug=' . $plugin_slug );
-			$custom_actions = array( '<a href="' . $url . '">' . __( 'Key', 'wpfactory-key-manager' ) . '</a>' );
+			$custom_actions = array( '<a href="' . $url . '">' . __( 'License', 'wpfactory-key-manager' ) . '</a>' );
 
 			return array_merge( $actions, $custom_actions );
 		}

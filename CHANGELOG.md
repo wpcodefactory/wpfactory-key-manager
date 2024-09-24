@@ -8,6 +8,10 @@
 * `Fixed` for any bug fixes.
 * `Security` in case of vulnerabilities
 
+## [1.0.2] - 2024-09-24
+### Changed
+* String Key by License on action links.
+
 ## [1.0.1] - 2024-09-19
 ### Changed
 * Menu page from settings to WPFactory.
