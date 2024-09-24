@@ -67,8 +67,8 @@ Installation via Composer. Instructions to setup the `composer.json`.
 ```
 src/
 ├── php/
-│──── pro/    
-│───── composer.json
+│   ├── pro/    
+│   │   └── composer.json
 └── ...
 ```
 
