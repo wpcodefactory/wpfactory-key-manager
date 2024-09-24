@@ -12,6 +12,10 @@
 ### Changed
 * String Key by License on action links.
 
+### Fixed
+* Replaced `alg_wpcodefactory_helper_version` option by `wpfkm_version`. 
+* Method versions.
+
 ## [1.0.1] - 2024-09-19
 ### Changed
 * Menu page from settings to WPFactory.

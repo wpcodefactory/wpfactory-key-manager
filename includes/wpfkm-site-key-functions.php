@@ -118,7 +118,7 @@ if ( ! function_exists( 'alg_wpcfh_check_site_key' ) ) {
 	/**
 	 * alg_wpcfh_check_site_key.
 	 *
-	 * @version 1.5.7
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	function alg_wpcfh_check_site_key( $item_slug ) {

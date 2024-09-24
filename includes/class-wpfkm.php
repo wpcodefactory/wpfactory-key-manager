@@ -78,7 +78,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		/**
 		 * WPFKM Constructor.
 		 *
-		 * @version       1.4.0
+		 * @version       1.0.2
 		 * @since         1.0.0
 		 *
 		 * @access        public
@@ -100,8 +100,8 @@ if ( ! class_exists( 'WPFKM' ) ) :
 			add_action( 'init', array( $this, 'localize' ) );
 
 			// Version update
-			if ( is_admin() && $this->version !== get_option( 'alg_wpcodefactory_helper_version', '' ) ) {
-				update_option( 'alg_wpcodefactory_helper_version', $this->version );
+			if ( is_admin() && $this->version !== get_option( 'wpfkm_version', '' ) ) {
+				update_option( 'wpfkm_version', $this->version );
 			}
 
 			// Include required files
@@ -111,8 +111,8 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		/**
 		 * localize.
 		 *
-		 * @version 1.4.0
-		 * @since   1.3.1
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 */
 		function localize() {
 			load_plugin_textdomain( 'wpfactory-key-manager', false, dirname( plugin_basename( WPFKM_FILE ) ) . '/langs/' );
@@ -121,7 +121,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		/**
 		 * Include required core files used in admin and on the frontend.
 		 *
-		 * @version 1.5.8
+		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
 		function includes() {
@@ -137,8 +137,8 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		/**
 		 * get_response_from_url.
 		 *
-		 * @version 1.5.8
-		 * @since   1.5.1
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @param $url
 		 *
@@ -166,7 +166,7 @@ if ( ! class_exists( 'WPFKM' ) ) :
 		/**
 		 * get_response_from_url_using_curl.
 		 *
-		 * @version 1.5.8
+		 * @version 1.0.0
 		 * @since   1.5.8
 		 *
 		 * @param $url
