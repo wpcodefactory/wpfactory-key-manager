@@ -63,11 +63,12 @@ Installation via Composer. Instructions to setup the `composer.json`.
 ```
 
 ## How to use it?
-1. Put the composer.json on the pro folder. In general it should be located in `includes/pro`, or `src/php`. Example:
+1. Put the composer.json on the pro folder. In general it should be located in `includes/pro`, or `src/php/pro`. Example:
 ```
 src/
 ├── php/
-│    └── composer.json
+│──── pro/    
+│───── composer.json
 └── ...
 ```
 
