@@ -8,6 +8,10 @@
 * `Fixed` for any bug fixes.
 * `Security` in case of vulnerabilities
 
+## [1.0.3] - 2024-09-26
+### Deprecated
+* `wpf_key_manager()` has been deprecated in favor of `wpfactory_key_manager()`.
+
 ## [1.0.2] - 2024-09-24
 ### Changed
 * String Key by License on action links.
