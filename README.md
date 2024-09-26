@@ -92,7 +92,9 @@ class Pro_Plugin(){
         require_once plugin_dir_path( $this->get_plugin_file_path() ) . '/src/php/pro/vendor/autoload.php';
 
         // Initializes WPFactory Key Manager library.
-        wpf_key_manager();
+        if ( is_admin() ) {
+            wpf_key_manager();
+        }
     }
 }
 ```
