@@ -11,22 +11,6 @@ if ( ! function_exists( 'wpf_key_manager' ) ) {
 	 * @return void|WPFKM|null
 	 */
 	function wpf_key_manager() {
-		_deprecated_function( __FUNCTION__, '1.0.3', 'wpfactory_key_manager' );
-		return wpfactory_key_manager();
-	}
-}
-
-if ( ! function_exists( 'wpfactory_key_manager' ) ) {
-
-	/**
-	 * Returns the main instance of WPFKM to prevent the need to use globals.
-	 *
-	 * @version 1.0.3
-	 * @since   1.0.3
-	 *
-	 * @return void|WPFKM|null
-	 */
-	function wpfactory_key_manager() {
 		if ( function_exists( 'alg_wpcodefactory_helper' ) ) {
 			return;
 		}
@@ -35,7 +19,7 @@ if ( ! function_exists( 'wpfactory_key_manager' ) ) {
 
 		defined( 'WPFKM_UPDATE_SERVER' ) || define( 'WPFKM_UPDATE_SERVER', 'https://wpfactory.com' );
 
-		defined( 'WPFKM_VERSION' ) || define( 'WPFKM_VERSION', '1.0.3' );
+		defined( 'WPFKM_VERSION' ) || define( 'WPFKM_VERSION', '1.0.2' );
 
 		defined( 'WPFKM_FILE' ) || define( 'WPFKM_FILE', __FILE__ );
 
