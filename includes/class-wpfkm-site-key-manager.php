@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin Site Key Manager
  *
- * @version 1.0.1
+ * @version 1.0.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -131,7 +131,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * add_admin_menu.
 		 *
-		 * @version 1.0.1
+		 * @version 1.0.3
 		 * @since   1.0.0
 		 */
 		function add_admin_menu() {
@@ -142,7 +142,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				'manage_options',
 				'wpfactory-key-manager',
 				array( $this, 'output_admin_menu' ),
-				20
+				1
 			);
 		}
 
