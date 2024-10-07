@@ -108,7 +108,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * add_theme_manage_key_links.
 		 *
-		 * @version       1.0.2
+		 * @version       1.0.4
 		 * @since         1.0.0
 		 *
 		 * @todo    (dev) minimize JS
@@ -123,7 +123,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 					__( 'License is valid.', 'wpfactory-key-manager' ) );
 			}
 			wp_enqueue_script( 'alg-wpfh-theme-manage-key-links',
-				wpf_key_manager()->plugin_url() . '/includes/js/alg-wpfh-theme-manage-key-links.js', array( 'jquery' ), wpf_key_manager()->version, true );
+				wpfactory_key_manager()->plugin_url() . '/includes/js/alg-wpfh-theme-manage-key-links.js', array( 'jquery' ), wpfactory_key_manager()->version, true );
 			wp_localize_script( 'alg-wpfh-theme-manage-key-links', 'alg_wpfh_object', array(
 				'themes_to_update' => $this->themes_to_update,
 				'manage_key_text'  => __( 'License', 'wpfactory-key-manager' ),
@@ -184,13 +184,13 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * add_updater_query_args_theme.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.1.0
 		 */
 		function add_updater_query_args_theme( $query ) {
 			$plugin_slug           = str_replace( 'puc_request_update_query_args_theme-', '', current_filter() );
 			$query['alg_site_key'] = alg_wpcfh_get_site_key( $plugin_slug );
-			$query['alg_site_url'] = wpf_key_manager()->site_url;
+			$query['alg_site_url'] = wpfactory_key_manager()->site_url;
 
 			return $query;
 		}
@@ -198,13 +198,13 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * add_updater_query_args.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 */
 		function add_updater_query_args( $query ) {
 			$plugin_slug           = str_replace( 'puc_request_info_query_args-', '', current_filter() );
 			$query['alg_site_key'] = alg_wpcfh_get_site_key( $plugin_slug );
-			$query['alg_site_url'] = wpf_key_manager()->site_url;
+			$query['alg_site_url'] = wpfactory_key_manager()->site_url;
 
 			return $query;
 		}

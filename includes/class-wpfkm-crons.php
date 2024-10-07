@@ -58,12 +58,12 @@ if ( ! class_exists( 'WPFKM_Crons' ) ) :
 		/**
 		 * check_sites_keys.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 */
 		function check_sites_keys( $interval ) {
 			update_option( 'alg_check_sites_keys_cron_time_last_run', time() );
-			$items = wpf_key_manager()->plugins_updater->items_to_update;
+			$items = wpfactory_key_manager()->plugins_updater->items_to_update;
 			foreach ( $items as $item_slug ) {
 				alg_wpcfh_check_site_key( $item_slug );
 			}
@@ -86,13 +86,13 @@ if ( ! class_exists( 'WPFKM_Crons' ) ) :
 		/**
 		 * get_plugins_list.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 */
 		function get_plugins_list() {
 			update_option( 'alg_get_plugins_list_cron_time_last_run', time() );
-			$url = add_query_arg( array( 'alg_get_plugins_list' => '' ), wpf_key_manager()->update_server );
-			if ( ( $response = wpf_key_manager()->get_response_from_url( $url ) ) ) {
+			$url = add_query_arg( array( 'alg_get_plugins_list' => '' ), wpfactory_key_manager()->update_server );
+			if ( ( $response = wpfactory_key_manager()->get_response_from_url( $url ) ) ) {
 				update_option( 'alg_wpcodefactory_helper_plugins', json_decode( $response ) );
 			}
 		}
@@ -114,13 +114,13 @@ if ( ! class_exists( 'WPFKM_Crons' ) ) :
 		/**
 		 * get_themes_list.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 */
 		function get_themes_list() {
 			update_option( 'alg_get_themes_list_cron_time_last_run', time() );
-			$url = add_query_arg( array( 'alg_get_themes_list' => '' ), wpf_key_manager()->update_server );
-			if ( ( $response = wpf_key_manager()->get_response_from_url( $url ) ) ) {
+			$url = add_query_arg( array( 'alg_get_themes_list' => '' ), wpfactory_key_manager()->update_server );
+			if ( ( $response = wpfactory_key_manager()->get_response_from_url( $url ) ) ) {
 				update_option( 'alg_wpcodefactory_helper_themes', json_decode( $response ) );
 			}
 		}

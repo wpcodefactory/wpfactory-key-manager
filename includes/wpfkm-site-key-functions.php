@@ -80,7 +80,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 	/**
 	 * alg_wpcfh_get_site_key_status_message.
 	 *
-	 * @version       1.0.0
+	 * @version       1.0.4
 	 * @since         1.0.0
 	 *
 	 * @todo    (dev) `SERVER_ERROR`: not used?
@@ -101,7 +101,7 @@ if ( ! function_exists( 'alg_wpcfh_get_site_key_status_message' ) ) {
 					case 'EMPTY_SITE_KEY':
 						return __( 'No key set.', 'wpfactory-key-manager' ) . ' ' .
 						       sprintf( __( 'To get the key, please visit <a target="_blank" href="%s">your account page at %s</a>.', 'wpfactory-key-manager' ),
-							       wpf_key_manager()->update_server . '/my-account/downloads/', wpf_key_manager()->update_server_text );
+							       wpfactory_key_manager()->update_server . '/my-account/downloads/', wpfactory_key_manager()->update_server_text );
 					case 'NO_RESPONSE':
 						return sprintf( __( 'No response from server. Please <a href="%s">try again</a> later.', 'wpfactory-key-manager' ), add_query_arg( 'alg_check_item_site_key', $item_slug ) );
 					case 'SERVER_ERROR':
@@ -118,7 +118,7 @@ if ( ! function_exists( 'alg_wpcfh_check_site_key' ) ) {
 	/**
 	 * alg_wpcfh_check_site_key.
 	 *
-	 * @version 1.0.0
+	 * @version 1.0.4
 	 * @since   1.0.0
 	 */
 	function alg_wpcfh_check_site_key( $item_slug ) {
@@ -126,9 +126,9 @@ if ( ! function_exists( 'alg_wpcfh_check_site_key' ) ) {
 			$url = add_query_arg( array(
 				'check_site_key' => $site_key,
 				'item_slug'      => $item_slug,
-				'site_url'       => wpf_key_manager()->site_url,
-			), wpf_key_manager()->update_server );
-			if ( $response = wpf_key_manager()->get_response_from_url( $url ) ) {
+				'site_url'       => wpfactory_key_manager()->site_url,
+			), wpfactory_key_manager()->update_server );
+			if ( $response = wpfactory_key_manager()->get_response_from_url( $url ) ) {
 				$server_response = json_decode( $response );
 				$client_data     = '';
 			} else {

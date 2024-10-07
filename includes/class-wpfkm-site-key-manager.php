@@ -69,10 +69,10 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * set_item_site_key.
 		 *
-		 * @version       1.0.0
+		 * @version       1.0.4
 		 * @since         1.0.0
 		 *
-		 * @todo    (dev) All items: `wpf_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();`?
+		 * @todo    (dev) All items: `wpfactory_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();`?
 		 */
 		function set_item_site_key() {
 
@@ -85,14 +85,14 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				$keys[ $item_slug ] = $site_key;
 				update_option( 'alg_site_keys', $keys );
 				alg_wpcfh_check_site_key( $item_slug );
-				wpf_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();
+				wpfactory_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();
 
 			} elseif ( isset( $_POST['alg_set_site_key_all'] ) ) {
 
 				// All items
 				$item_slugs = array_merge(
-					wpf_key_manager()->plugins_updater->plugins_to_update,
-					wpf_key_manager()->plugins_updater->themes_to_update,
+					wpfactory_key_manager()->plugins_updater->plugins_to_update,
+					wpfactory_key_manager()->plugins_updater->themes_to_update,
 				);
 				$site_key   = sanitize_text_field( $_POST['alg_site_key'] );
 				$keys       = get_option( 'alg_site_keys', array() );
@@ -202,8 +202,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * get_site_url_html.
 		 *
-		 * @version 1.6.0
-		 * @since   1.5.8
+		 * @version 1.0.4
+		 * @since   1.0.0
 		 *
 		 * @return false|string
 		 */
@@ -217,7 +217,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 						<label><?php _e( 'Site URL', 'wpfactory-key-manager' ); ?></label>
 					</th>
 					<td>
-						<code> <?php echo esc_url( wpf_key_manager()->site_url ) ?> </code>
+						<code> <?php echo esc_url( wpfactory_key_manager()->site_url ) ?> </code>
 					</td>
 				</tr>
 				</tbody>
@@ -232,8 +232,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * get_key_setting_input_html.
 		 *
-		 * @version 1.6.0
-		 * @since   1.5.8
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @param $all_plugins
 		 * @param $all_themes
@@ -296,7 +296,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * output_admin_menu.
 		 *
-		 * @version       1.7.1
+		 * @version       1.0.4
 		 * @since         1.0.0
 		 *
 		 * @todo    (dev) restyle
@@ -316,7 +316,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 
 			$table_data = array();
 
-			foreach ( wpf_key_manager()->plugins_updater->plugins_to_update as $plugin_slug ) {
+			foreach ( wpfactory_key_manager()->plugins_updater->plugins_to_update as $plugin_slug ) {
 				$plugin_file   = $plugin_slug . '/' . $plugin_slug . '.php';
 				$item_site_key = alg_wpcfh_get_site_key( $plugin_slug );
 				$table_data[]  = array(
@@ -342,7 +342,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				);
 			}
 
-			foreach ( wpf_key_manager()->plugins_updater->themes_to_update as $theme_slug ) {
+			foreach ( wpfactory_key_manager()->plugins_updater->themes_to_update as $theme_slug ) {
 				$item_site_key = alg_wpcfh_get_site_key( $theme_slug );
 				$table_data[]  = array(
 					esc_html__( 'Theme', 'wpfactory-key-manager' ),
@@ -386,8 +386,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				$html .= '<p style="font-style:italic;">' .
 						 sprintf(
 							 __( 'You have no items from %s installed.', 'wpfactory-key-manager' ),
-							 '<a target="_blank" href="' . wpf_key_manager()->update_server . '">' .
-							 wpf_key_manager()->update_server_text .
+							 '<a target="_blank" href="' . wpfactory_key_manager()->update_server . '">' .
+							 wpfactory_key_manager()->update_server_text .
 							 '</a>'
 						 ) .
 						 '</p>';
