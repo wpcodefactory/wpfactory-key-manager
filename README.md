@@ -102,4 +102,4 @@ class Pro_Plugin(){
 ```
 
 > [!NOTE]  
-> For compatibility reasons, please check if `wpf_key_manager()` function exists before calling `wpfactory_key_manager()`. Full example: `function_exists( 'wpfactory_key_manager' ) ? wpfactory_key_manager() : wpf_key_manager();`
+> For compatibility reasons, please check if `wpfactory_key_manager()` function exists before calling it. If it does not, call `wpf_key_manager()`. Full example: `function_exists( 'wpfactory_key_manager' ) ? wpfactory_key_manager() : wpf_key_manager();`
