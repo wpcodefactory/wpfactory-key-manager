@@ -8,6 +8,10 @@
 * `Fixed` for any bug fixes.
 * `Security` in case of vulnerabilities
 
+## [1.0.4] - 2024-10-07
+### Deprecated
+* `wpf_key_manager()` in favor of `wpfactory_key_manager`.
+
 ## [1.0.3] - 2024-09-26
 ### Changed
 * Submenu item position from 20 to 1, making it the first on WPFactory menu.
