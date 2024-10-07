@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin - Crons
  *
- * @version 1.0.0
+ * @version 1.0.4
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -24,17 +24,17 @@ if ( ! class_exists( 'WPFKM_Crons' ) ) :
 		 */
 		function __construct() {
 
-			// Check sites keys
+			// Check sites keys.
 			add_action( 'init', array( $this, 'schedule_check_sites_keys' ) );
 			add_action( 'admin_init', array( $this, 'schedule_check_sites_keys' ) );
 			add_action( 'alg_check_sites_keys', array( $this, 'check_sites_keys' ) );
 
-			// Get plugins list
+			// Get plugins list.
 			add_action( 'init', array( $this, 'schedule_get_plugins_list' ) );
 			add_action( 'admin_init', array( $this, 'schedule_get_plugins_list' ) );
 			add_action( 'alg_get_plugins_list', array( $this, 'get_plugins_list' ) );
 
-			// Get themes list
+			// Get themes list.
 			add_action( 'init', array( $this, 'schedule_get_themes_list' ) );
 			add_action( 'admin_init', array( $this, 'schedule_get_themes_list' ) );
 			add_action( 'alg_get_themes_list', array( $this, 'get_themes_list' ) );

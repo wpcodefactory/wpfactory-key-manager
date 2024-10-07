@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Plugins Updater Class
  *
- * @version 1.0.2
+ * @version 1.0.4
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -240,7 +240,7 @@ if ( ! class_exists( 'WPFKM_Plugins_Updater' ) ) :
 		/**
 		 * maybe_add_after_plugin_row_key_error_message.
 		 *
-		 * @version 1.5.0
+		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
 		function maybe_add_after_plugin_row_key_error_message( $plugin_file, $plugin_data, $status ) {

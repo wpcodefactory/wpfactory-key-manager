@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin Site Key Manager
  *
- * @version 1.0.3
+ * @version 1.0.4
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -189,8 +189,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * get_site_item_key_column.
 		 *
-		 * @version 1.2.0
-		 * @since   1.2.0
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 */
 		function get_site_item_key_column( $item_site_key, $item_slug ) {
 			return ( '' === $item_site_key ? '' :
