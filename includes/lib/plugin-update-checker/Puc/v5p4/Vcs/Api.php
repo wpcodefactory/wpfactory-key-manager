@@ -124,7 +124,7 @@ if ( !class_exists(Api::class, false) ):
 		abstract protected function getUpdateDetectionStrategies($configBranch);
 
 		/**
-		 * Get the CHANGELOG.md file from the remote repository and parse it
+		 * Get the readme.txt file from the remote repository and parse it
 		 * according to the plugin readme standard.
 		 *
 		 * @param string $ref Tag or branch name.
@@ -141,13 +141,13 @@ if ( !class_exists(Api::class, false) ):
 		}
 
 		/**
-		 * Get the case-sensitive name of the local CHANGELOG.md file.
+		 * Get the case-sensitive name of the local readme.txt file.
 		 *
-		 * In most cases it should just be called "CHANGELOG.md", but some plugins call it "README.txt",
+		 * In most cases it should just be called "readme.txt", but some plugins call it "README.txt",
 		 * "README.TXT", or even "Readme.txt". Most VCS are case-sensitive so we need to know the correct
 		 * capitalization.
 		 *
-		 * Defaults to "CHANGELOG.md" (all lowercase).
+		 * Defaults to "readme.txt" (all lowercase).
 		 *
 		 * @return string
 		 */
@@ -157,12 +157,12 @@ if ( !class_exists(Api::class, false) ):
 				return $fileName;
 			}
 
-			$fileName = 'CHANGELOG.md';
+			$fileName = 'readme.txt';
 			if ( isset($this->localDirectory) ) {
 				$files = scandir($this->localDirectory);
 				if ( !empty($files) ) {
 					foreach ($files as $possibleFileName) {
-						if ( strcasecmp($possibleFileName, 'CHANGELOG.md') === 0 ) {
+						if ( strcasecmp($possibleFileName, 'readme.txt') === 0 ) {
 							$fileName = $possibleFileName;
 							break;
 						}
@@ -203,7 +203,7 @@ if ( !class_exists(Api::class, false) ):
 		 * @return bool
 		 */
 		protected function looksLikeVersion($name) {
-			//Tag names may be prefixed with "v", e.g. "v1.0.0.
+			//Tag names may be prefixed with "v", e.g. "v1.2.3".
 			$name = ltrim($name, 'v');
 
 			//The version string must start with a number.

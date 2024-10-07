@@ -59,7 +59,7 @@ Getting Started
 		}
 		```
 		
-		This is actually a complete example that shows all theme-related fields. `version` and `download_url` should be self-explanatory. The `details_url` key specifies the page that the user will see if they click the "View version 1.0.0details" link in an update notification.  
+		This is actually a complete example that shows all theme-related fields. `version` and `download_url` should be self-explanatory. The `details_url` key specifies the page that the user will see if they click the "View version 1.2.3 details" link in an update notification.  
 3. Upload the JSON file to a publicly accessible location.
 4. Add the following code to the main plugin file or to the `functions.php` file:
 
@@ -113,7 +113,7 @@ By default, the library will check the specified URL for changes every 12 hours.
 	//Optional: If you're using a private repository, specify the access token like this:
 	$myUpdateChecker->setAuthentication('your-token-here');
 	```
-3. Plugins only: Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. The contents of this file will be shown when the user clicks the "View version 1.0.0details" link.
+3. Plugins only: Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. The contents of this file will be shown when the user clicks the "View version 1.2.3 details" link.
 
 #### How to Release an Update
 
@@ -130,9 +130,9 @@ This library supports a couple of different ways to release updates on GitHub. P
 	
 - **Tags** 
 	
-	To release version 1.0.0 create a new Git tag named `v1.0.0 or `1.0.0. That's it.
+	To release version 1.2.3, create a new Git tag named `v1.2.3` or `1.2.3`. That's it.
 	
-	PUC doesn't require strict adherence to [SemVer](https://semver.org/). These are all valid tag names: `v1.0.0, `v1.2-foo`, `1.0.0rc1-ABC`, `1.0.04.5`. However, be warned that it's not smart enough to filter out alpha/beta/RC versions. If that's a problem, you might want to use GitHub releases or branches instead.
+	PUC doesn't require strict adherence to [SemVer](https://semver.org/). These are all valid tag names: `v1.2.3`, `v1.2-foo`, `1.2.3_rc1-ABC`, `1.2.3.4.5`. However, be warned that it's not smart enough to filter out alpha/beta/RC versions. If that's a problem, you might want to use GitHub releases or branches instead.
 	
 - **Stable branch** 
 	
@@ -201,7 +201,7 @@ The library will pull update details from the following parts of a release/tag/b
 	//Optional: Set the branch that contains the stable release.
 	$myUpdateChecker->setBranch('stable-branch-name');
 	```
-3. Optional: Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. For plugins, the contents of this file will be shown when the user clicks the "View version 1.0.0details" link.
+3. Optional: Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. For plugins, the contents of this file will be shown when the user clicks the "View version 1.2.3 details" link.
 
 #### How to Release an Update
 
@@ -211,7 +211,7 @@ BitBucket doesn't have an equivalent to GitHub's releases, so the process is sli
 	
 	This is the recommended approach if you're using tags to mark each version. Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. Set the "stable tag" header to the tag that represents the latest release. Example:
 	```text
-	Stable tag: v1.0.0
+	Stable tag: v1.2.3
 	```
 	The tag doesn't have to start with a "v" or follow any particular format. You can use any name you like as long as it's a valid Git tag.
 	
@@ -219,9 +219,9 @@ BitBucket doesn't have an equivalent to GitHub's releases, so the process is sli
 	
 - **Tags** 
 	
-	You can skip the "stable tag" bit and just create a new Git tag named `v1.0.0 or `1.0.0. The update checker will look at the most recent tags and pick the one that looks like the highest version number.
+	You can skip the "stable tag" bit and just create a new Git tag named `v1.2.3` or `1.2.3`. The update checker will look at the most recent tags and pick the one that looks like the highest version number.
 	
-	PUC doesn't require strict adherence to [SemVer](https://semver.org/). These are all valid tag names: `v1.0.0, `v1.2-foo`, `1.0.0rc1-ABC`, `1.0.04.5`. However, be warned that it's not smart enough to filter out alpha/beta/RC versions.
+	PUC doesn't require strict adherence to [SemVer](https://semver.org/). These are all valid tag names: `v1.2.3`, `v1.2-foo`, `1.2.3_rc1-ABC`, `1.2.3.4.5`. However, be warned that it's not smart enough to filter out alpha/beta/RC versions.
 	
 - **Stable branch** 
 	
@@ -278,7 +278,7 @@ BitBucket doesn't have an equivalent to GitHub's releases, so the process is sli
 	);
 	```
 
-3. Plugins only: Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. The contents of this file will be shown when the user clicks the "View version 1.0.0details" link.
+3. Plugins only: Add a `readme.txt` file formatted according to the [WordPress.org plugin readme standard](https://wordpress.org/plugins/readme.txt) to your repository. The contents of this file will be shown when the user clicks the "View version 1.2.3 details" link.
 
 #### How to Release a GitLab Update
 
@@ -286,7 +286,7 @@ A GitLab repository can be checked for updates in 3 different ways.
 
 - **GitLab releases**
 	
-	Create a new release using the "Releases" feature on GitLab. The tag name should match the version number. You can add a `v` prefix to the tag, like `v1.0.0. Releases that are marked as ["Upcoming Release"](https://docs.gitlab.com/ee/user/project/releases/index.html#upcoming-releases) will be automatically ignored.
+	Create a new release using the "Releases" feature on GitLab. The tag name should match the version number. You can add a `v` prefix to the tag, like `v1.2.3`. Releases that are marked as ["Upcoming Release"](https://docs.gitlab.com/ee/user/project/releases/index.html#upcoming-releases) will be automatically ignored.
 	
 	If you want to use custom release assets, call the `enableReleaseAssets()` method after creating the update checker instance:
 	```php
@@ -305,7 +305,7 @@ A GitLab repository can be checked for updates in 3 different ways.
 
 - **Tags**
 
-	To release version 1.0.0 create a new Git tag named `v1.0.0 or `1.0.0. The update checker will look at recent tags and use the one that looks like the highest version number.
+	To release version 1.2.3, create a new Git tag named `v1.2.3` or `1.2.3`. The update checker will look at recent tags and use the one that looks like the highest version number.
 	
 	PUC doesn't require strict adherence to [SemVer](https://semver.org/). However, be warned that it's not smart enough to filter out alpha/beta/RC versions. If that's a problem, you might want to use GitLab branches instead.
 

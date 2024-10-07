@@ -12,6 +12,9 @@
 ### Deprecated
 * `wpf_key_manager()` in favor of `wpfactory_key_manager`.
 
+### Fixed
+* Plugin Update Checker library.
+
 ## [1.0.3] - 2024-09-26
 ### Changed
 * Submenu item position from 20 to 1, making it the first on WPFactory menu.

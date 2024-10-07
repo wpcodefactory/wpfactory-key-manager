@@ -121,7 +121,7 @@ if ( !class_exists(BitBucketApi::class, false) ):
 		}
 
 		/**
-		 * Get the tag/ref specified by the "Stable tag" header in the CHANGELOG.md of a given branch.
+		 * Get the tag/ref specified by the "Stable tag" header in the readme.txt of a given branch.
 		 *
 		 * @param string $branch
 		 * @return null|Reference
