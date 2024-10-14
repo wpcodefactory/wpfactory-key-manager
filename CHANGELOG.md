@@ -8,6 +8,10 @@
 * `Fixed` for any bug fixes.
 * `Security` in case of vulnerabilities
 
+## [1.0.5] - 2024-10-14
+### Fixed
+* Capability to `manage_woocommerce` if woocommerce is enabled, or else `manage_options`.
+
 ## [1.0.4] - 2024-10-07
 ### Deprecated
 * `wpf_key_manager()` in favor of `wpfactory_key_manager`.

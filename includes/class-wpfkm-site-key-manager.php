@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin Site Key Manager
  *
- * @version 1.0.4
+ * @version 1.0.5
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -131,7 +131,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * add_admin_menu.
 		 *
-		 * @version 1.0.3
+		 * @version 1.0.5
 		 * @since   1.0.0
 		 */
 		function add_admin_menu() {
@@ -139,7 +139,7 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				WPFactory_Admin_Menu::get_instance()->get_menu_slug(),
 				__( 'WPFactory Key Manager', 'wpcodefactory-key-manager' ),
 				__( 'Key Manager', 'wpcodefactory-key-manager' ),
-				'manage_options',
+				class_exists( 'WooCommerce' ) ? 'manage_woocommerce' : 'manage_options',
 				'wpfactory-key-manager',
 				array( $this, 'output_admin_menu' ),
 				1
