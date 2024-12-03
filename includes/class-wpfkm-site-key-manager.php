@@ -2,7 +2,7 @@
 /**
  * WPFactory Key Manager - Admin Site Key Manager
  *
- * @version 1.0.5
+ * @version 1.0.6
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -52,8 +52,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * update_item_list.
 		 *
-		 * @version       1.0.0
-		 * @since         1.0.0
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 *
 		 * @todo    (dev) add "Item list successfully updated" message
 		 */
@@ -69,8 +69,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * set_item_site_key.
 		 *
-		 * @version       1.0.4
-		 * @since         1.0.0
+		 * @version 1.0.6
+		 * @since   1.0.0
 		 *
 		 * @todo    (dev) All items: `wpfactory_key_manager()->plugins_updater->update_checkers[ $item_slug ]->checkForUpdates();`?
 		 */
@@ -98,9 +98,11 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 				$keys       = get_option( 'alg_site_keys', array() );
 				foreach ( $item_slugs as $item_slug ) {
 					$keys[ $item_slug ] = $site_key;
-					alg_wpcfh_check_site_key( $item_slug );
 				}
 				update_option( 'alg_site_keys', $keys );
+				foreach ( $item_slugs as $item_slug ) {
+					alg_wpcfh_check_site_key( $item_slug );
+				}
 
 			}
 
@@ -296,8 +298,8 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 		/**
 		 * output_admin_menu.
 		 *
-		 * @version       1.0.4
-		 * @since         1.0.0
+		 * @version 1.0.6
+		 * @since   1.0.0
 		 *
 		 * @todo    (dev) restyle
 		 */
@@ -366,6 +368,11 @@ if ( ! class_exists( 'WPFKM_Site_Key_Manager' ) ) :
 					),
 				);
 			}
+
+			// Sort by item name
+			usort( $table_data, function ( $a, $b ) {
+				return ( $a[1] == $b[1] ? 0 : ( $a[1] < $b[1] ? -1 : 1 ) );
+			} );
 
 			if ( ! empty( $table_data ) ) {
 				$table_data = array_merge(

@@ -8,6 +8,12 @@
 * `Fixed` for any bug fixes.
 * `Security` in case of vulnerabilities
 
+## [1.0.6] - 2024-12-03
+### Fixed
+* Set this key for all items - Check site key fixed.
+### Changed
+* WPFactory items - Table sorted by item name.
+
 ## [1.0.5] - 2024-10-14
 ### Fixed
 * Capability to `manage_woocommerce` if woocommerce is enabled, or else `manage_options`.
@@ -28,7 +34,7 @@
 * String Key by License on action links.
 
 ### Fixed
-* Replaced `alg_wpcodefactory_helper_version` option by `wpfkm_version`. 
+* Replaced `alg_wpcodefactory_helper_version` option by `wpfkm_version`.
 * Method versions.
 
 ## [1.0.1] - 2024-09-19
