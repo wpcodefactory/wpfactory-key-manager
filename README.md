@@ -89,12 +89,12 @@ add_action( 'plugins_loaded', function(){
 
 ```php
 class Pro_Plugin(){
-    function __construct() {
-        // Composer.
-        require_once plugin_dir_path( $this->get_plugin_file_path() ) . '/src/php/pro/vendor/autoload.php';
-
-        // Initializes WPFactory Key Manager library.
+    function __construct() {        
         if ( is_admin() ) {
+            // Composer.
+            require_once plugin_dir_path( $this->get_plugin_file_path() ) . '/src/php/pro/vendor/autoload.php';
+
+            // Initializes WPFactory Key Manager library.
             function_exists( 'wpfactory_key_manager' ) ? wpfactory_key_manager() : wpf_key_manager();
         }
     }
