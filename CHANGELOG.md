@@ -10,7 +10,7 @@
 
 ## [1.0.7] - 2025-03-11
 ### Changed
-* Namespace from `v5\PucFactory` to `v5p4\PucFactory` so it won't conflict with other plugins loading possible older versions.
+* Namespace from `v5\PucFactory` to `v5p4\PucFactory` so it won't conflict with other plugins loading possible older versions of Puc.
 
 ## [1.0.6] - 2024-12-03
 ### Fixed
