@@ -8,6 +8,10 @@
 * `Fixed` for any bug fixes.
 * `Security` in case of vulnerabilities
 
+## [1.0.7] - 2025-03-11
+### Changed
+* Namespace from `v5\PucFactory` to `v5p4\PucFactory` so it won't conflict with other plugins loading possible older versions.
+
 ## [1.0.6] - 2024-12-03
 ### Fixed
 * Set this key for all items - Check site key fixed.

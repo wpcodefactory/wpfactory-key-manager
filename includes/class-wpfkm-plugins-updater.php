@@ -2,13 +2,13 @@
 /**
  * WPFactory Key Manager - Plugins Updater Class
  *
- * @version 1.0.4
+ * @version 1.0.7
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
  */
 
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+use YahnisElsts\PluginUpdateChecker\v5p4\PucFactory;
 
 defined( 'ABSPATH' ) || exit;
 
