@@ -103,3 +103,10 @@ class Pro_Plugin(){
 
 > [!NOTE]  
 > For compatibility reasons, please check if `wpfactory_key_manager()` function exists before calling it. If it does not, call `wpf_key_manager()`. Full example: `function_exists( 'wpfactory_key_manager' ) ? wpfactory_key_manager() : wpf_key_manager();`
+
+## Important
+
+Everytime the Puc library is updated, edit the namespace accordingly on `WPFKM_Plugins_Updater` class to match the namespace from the `PucFactory` class. Example:
+```php
+use YahnisElsts\PluginUpdateChecker\v5p4\PucFactory;
+```
