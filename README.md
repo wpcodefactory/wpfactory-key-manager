@@ -106,7 +106,14 @@ class Pro_Plugin(){
 
 ## Important
 
-Everytime the Puc library is updated, edit the namespace accordingly on `WPFKM_Plugins_Updater` class to match the namespace from the `PucFactory` class. Example:
+Everytime the Puc library is updated, edit the use statement accordingly on `WPFKM_Plugins_Updater` class to match the namespace from the `PucFactory` class. Example:
+
+```php
+namespace YahnisElsts\PluginUpdateChecker\v5p4;
+class PucFactory {
+```
+
 ```php
 use YahnisElsts\PluginUpdateChecker\v5p4\PucFactory;
+class WPFKM_Plugins_Updater {
 ```
